@@ -1,0 +1,5 @@
+import IntencityToggleAble
+import Light
+
+class IntensityLight(IntencityToggleAble,Light):
+    pass
