@@ -1,14 +1,10 @@
-from abc import ABC, abstractmethod
+from Aktor import Aktor
 
-import Aktor
-class SwitchOnOffAble(ABC,Aktor):
-    def __init__(self, running:bool):
-        self.running = running
+class SwitchOnOffAble(Aktor):
+    running = False
         
-    @abstractmethod
     def setRunning(self, running:bool):
-        pass
-     
-    @abstractmethod
+        self.running = running 
+
     def isRunning(self) -> bool:
-        pass
+        return self.running

@@ -1,14 +1,13 @@
-from abc import ABC, abstractmethod
-import Aktor
+from Aktor import Aktor
 
-class IntencityToggleAble(ABC, Aktor):
+class IntencityToggleAble( Aktor):
 
-    def __init__(self, intencity:int):
-        self.intencity = intencity
+    intencity =0
 
-    @abstractmethod
     def getIntencity(self) -> int:
-        pass    
-    @abstractmethod
+        return self.intencity    
+    
     def setIntencity(self, intencity):
-        pass
+        if ( intencity > 100 or intencity < 0):
+            raise Exception("not possible")
+        self.intencity = intencity
