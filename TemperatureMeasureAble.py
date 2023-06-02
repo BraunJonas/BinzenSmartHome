@@ -1,8 +1,14 @@
-import Sensor
+from random import randint
 
-class TemperatureMeasureable(Sensor):
-    #Abstrct Method Sensor
-    def checkEverythingNormal(self):
-        print("TemperatureBenceable: everything is normal")
+from Sensor import Sensor
+
+class TemperatureMeasureAble(Sensor):
+
     def measureTemperature(self) -> int:
-        pass #int muss zurück logik
+        return randint(-10,55)
+    
+    def checkEverythingNormal(self) -> bool:
+        if ( self.measureTemperature() > -5 and self.measureTemperature() < 40 ):
+            return True
+        else:
+            return False

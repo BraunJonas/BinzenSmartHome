@@ -1,15 +1,11 @@
-from abc import ABC, abstractmethod
-import Aktor
+from Aktor import Aktor
 
 class OpenCloseAble(Aktor):
+    open = False
 
-    def __init__(self, open:bool):
+    def isOpen(self) -> bool:
+        return self.open    
+    
+    def setOpen(self, open:bool):
         self.open = open
-
-    @abstractmethod
-    def getOpen(self) -> bool:
-        pass
-
-    @abstractmethod
-    def setOpen(self, open):
-        pass
+        

@@ -6,7 +6,11 @@ class IntensityLight(IntencityToggleAble,Light):
         print("IntensityLight "+ name +" has been created")
         super().__init__(name)
 
-    
+    def activateNightMode(self):
+        super().activateNightMode()
+        self.setIntencity(5)
+        print("IntesnsityLight "+str(self.name) + " activated Night Mode")
+
     def setIntencity(self, intencity):
         super().setIntencity(intencity)
         print("IntensityLight "+ self.name +" set to intensity: "+ str(intencity))
