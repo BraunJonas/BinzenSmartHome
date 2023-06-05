@@ -2,6 +2,9 @@ import tkinter
 import tkinter.messagebox
 import customtkinter
 from CoolingDevice import CoolingDevice
+from AudioDevice import AudioDevice
+from GarageDoor import GarageDoor
+from HeatingDevice import HeatingDevice
 from Light import Light
 from Room import Room
 from IntensityLight import IntensityLight
@@ -27,6 +30,7 @@ class GUI(customtkinter.CTk):
 
         # Rooms
         self.roomList = []
+        self.roomListNames = []
         self.roomsFrame = customtkinter.CTkScrollableFrame(self, label_text="Rooms")
         self.roomsFrame.grid(
             row=0,
@@ -43,7 +47,6 @@ class GUI(customtkinter.CTk):
             command=self.addRoom,
         )
         self.addRoomButton.grid(row=0, column=0, padx=20, pady=0)
-        self.roomLabels = []
 
         # Devices
         self.devicesFrame = customtkinter.CTkScrollableFrame(self, label_text="Devices")
@@ -56,7 +59,7 @@ class GUI(customtkinter.CTk):
             master=self.devicesFrame, values=self.roomList
         )
         self.optionRoom.set("select room")
-        self.optionRoom.grid(row=0, column=0, padx=20, pady=0)
+        self.optionRoom.grid(row=0, column=0, padx=10, pady=0)
 
         self.optionDeviceType = customtkinter.CTkOptionMenu(
             master=self.devicesFrame,
@@ -68,10 +71,12 @@ class GUI(customtkinter.CTk):
                 "Heating Device",
                 "Light",
                 "dimmable Light",
-                "Tv",
+                "TV",
                 "Window",
             ],
         )
+        self.optionDeviceType.set("select device type")
+        self.optionDeviceType.grid(row=0, column=1, padx=10, pady=0)
 
         self.addDeviceButton = customtkinter.CTkButton(
             master=self.devicesFrame,
@@ -79,7 +84,7 @@ class GUI(customtkinter.CTk):
             command=self.addDevice,
         )
 
-        self.addDeviceButton.grid(row=0, column=1, padx=20, pady=0)
+        self.addDeviceButton.grid(row=0, column=2, padx=10, pady=0)
         self.deviceLabels = []
 
         # Heating controls
@@ -146,25 +151,57 @@ class GUI(customtkinter.CTk):
         roomLabel = customtkinter.CTkLabel(
             master=self.roomsFrame, text=newRoom.getName()
         )
-        roomLabel.grid(row=len(self.roomLabels) + 1, column=0, padx=10, pady=(0, 10))
-        self.roomLabels.append(roomLabel)
+        roomLabel.grid(row=len(self.roomList) + 2, column=0, padx=10, pady=(0, 10))
         self.roomList.append(newRoom)
-        self.optionRoom.configure(values=self.roomList)
+        self.roomListNames.append(newRoom.getName())
+        self.optionRoom.configure(values=self.roomListNames)
 
     def addDevice(self):
         dialog = customtkinter.CTkInputDialog(text="device name:", title="Add device")
-        selectedRoom = self.optionRoom.get()
-        index = self.roomList.index(selectedRoom)
-        self.roomList[index].addDevice()
-        deviceLabel = customtkinter.CTkLabel(
-            master=self.devicesFrame, text=dialog.get_input()
+        selectedRoom = None
+        for room in self.roomList:
+            if room.getName() == self.optionRoom.get():
+                selectedRoom = room
+        deviceName = dialog.get_input()
+        selectedDeviceType = self.optionDeviceType.get()
+
+        if selectedDeviceType == "Audio Device":
+            selectedRoom.addDevice(AudioDevice(deviceName))
+        elif selectedDeviceType == "Cooling Device":
+            selectedRoom.addDevice(CoolingDevice(deviceName))
+        elif selectedDeviceType == "Door":
+            selectedRoom.addDevice(Door(deviceName))
+        elif selectedDeviceType == "Garage Door":
+            selectedRoom.addDevice(GarageDoor(deviceName))
+        elif selectedDeviceType == "Heating Device":
+            selectedRoom.addDevice(HeatingDevice(deviceName))
+        elif selectedDeviceType == "Light":
+            selectedRoom.addDevice(Light(deviceName))
+        elif selectedDeviceType == "dimmable Light":
+            selectedRoom.addDevice(IntensityLight(deviceName))
+        elif selectedDeviceType == "TV":
+            selectedRoom.addDevice(Tv(deviceName))
+        elif selectedDeviceType == "Window":
+            selectedRoom.addDevice(Window(deviceName))
+
+        deviceRoom = customtkinter.CTkLabel(
+            master=self.devicesFrame, text=selectedRoom.getName()
         )
+        deviceRoom.grid(row=len(self.deviceLabels) + 1, column=0, padx=10, pady=(0, 10))
+
+        deviceType = customtkinter.CTkLabel(
+            master=self.devicesFrame, text=selectedDeviceType
+        )
+        deviceType.grid(row=len(self.deviceLabels) + 1, column=1, padx=10, pady=(0, 10))
+
+        deviceLabel = customtkinter.CTkLabel(master=self.devicesFrame, text=deviceName)
         deviceLabel.grid(
-            row=len(self.deviceLabels) + 1, column=0, padx=10, pady=(0, 10)
+            row=len(self.deviceLabels) + 1, column=2, padx=10, pady=(0, 10)
         )
         self.deviceLabels.append(deviceLabel)
 
     def startSetup(self):
+        # add rooms
         rooms = []
         rooms.append(Room("Küche"))
         rooms.append(Room("Schlafzimmer"))
@@ -173,12 +210,11 @@ class GUI(customtkinter.CTk):
             roomLabel = customtkinter.CTkLabel(
                 master=self.roomsFrame, text=room.getName()
             )
-            roomLabel.grid(
-                row=len(self.roomLabels) + 1, column=0, padx=10, pady=(0, 10)
-            )
-            self.roomLabels.append(roomLabel)
-            self.roomList.append(room.getName())
-        self.optionRoom.configure(values=self.roomList)
+            roomLabel.grid(row=len(self.roomList) + 2, column=0, padx=10, pady=(0, 10))
+
+            self.roomList.append(room)
+            self.roomListNames.append(room.getName())
+        self.optionRoom.configure(values=self.roomListNames)
 
 
 if __name__ == "__main__":
