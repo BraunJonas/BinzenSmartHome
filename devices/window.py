@@ -1,8 +1,8 @@
-from AktorDevice import Device
-from AktorDevice import LightIntensityMeasureAble
-from AktorDevice import OpenCloseAble
+from device import Device
+from sensors.light_intensity_measurable import LightIntensityMeasurable
+from actors.open_closeable import OpenCloseable
 
-class Window(Device, LightIntensityMeasureAble, OpenCloseAble):
+class Window(Device, LightIntensityMeasurable, OpenCloseable):
     def __init__(self, name:str):
         print("Window "+ name +" has been created")
         super().__init__(name)
