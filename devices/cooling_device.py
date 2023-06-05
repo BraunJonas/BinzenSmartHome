@@ -1,8 +1,8 @@
-from AktorDevice import Device
-from AktorDevice import TemperatureMeasureAble
-from AktorDevice import TemperatureToggleAble
+from device import Device
+from sensors.temperature_measurable import TemperatureMeasureable
+from actors.temperature_toggleable import TemperatureToggleable
 
-class CoolingDevice(Device, TemperatureMeasureAble, TemperatureToggleAble):
+class CoolingDevice(Device, TemperatureMeasureable, TemperatureToggleable):
     def __init__(self, name:str):
         print("CoolingDevice "+ name +" has been created")
         super().__init__(name)
@@ -13,7 +13,6 @@ class CoolingDevice(Device, TemperatureMeasureAble, TemperatureToggleAble):
         if(self.checkAboveTarget):
             print("start cooling")
 
-    
     def activateNightMode(self):
         self.setTemperature(16)
         print("CoolingDevice "+str(self.name) + "activated Night Mode")

@@ -1,8 +1,8 @@
 from random import randint
 
-from Sensor import Sensor
+from sensor import Sensor
 
-class TemperatureMeasureAble(Sensor):
+class TemperatureMeasureable(Sensor):
 
     def measureTemperature(self) -> int:
         return randint(-10,55)

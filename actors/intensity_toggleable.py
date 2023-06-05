@@ -1,6 +1,6 @@
-from Aktor import Aktor
+from actor import Actor
 
-class IntencityToggleAble( Aktor):
+class IntensityToggleable(Actor):
 
     intencity =0
 

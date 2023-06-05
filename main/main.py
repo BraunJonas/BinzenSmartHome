@@ -1,10 +1,10 @@
-from Heating import CoolingDevice
-from Light import Light
-from Room import Room
-from Light import IntensityLight
-from Entertainment import Tv
-from Door import Window
-from Door import Door
+from devices.cooling_device import CoolingDevice
+from devices.lights import Light
+from rooms.room import Room
+from devices.lights import IntensityLight
+from devices.multimedia_devices import Tv
+from devices.window import Window
+from devices.door import Door
 
 if __name__ == "__main__":
     room = Room("Raum1")

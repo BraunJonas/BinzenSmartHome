@@ -1,8 +1,8 @@
-from AktorDevice import Device
-from AktorDevice import IntencityToggleAble
-from AktorDevice import SwitchOnOffAble
+from device import Device
+from actors.intensity_toggleable import IntensityToggleable
+from actors.switch_on_offable import SwitchOnOffable
 
-class AudioDevice(Device,IntencityToggleAble,SwitchOnOffAble):
+class AudioDevice(Device,IntensityToggleable,SwitchOnOffable):
     
     def __init__(self, name:str):
         print("Audiodevice "+ name +" has been created")
@@ -25,4 +25,11 @@ class AudioDevice(Device,IntencityToggleAble,SwitchOnOffAble):
         if(self.isRunning()):
             print("AudioDevice "+str(self.name) + " is playing audio")
 
-        
+class Tv(AudioDevice):
+    def __init__(self, name:str):
+        print("TV "+ name +" has been created")
+        super().__init__(name)
+
+    def playVideo(self):
+        if(self.isRunning()):
+            print("AudioDevice "+str(self.name) + " is playing video")

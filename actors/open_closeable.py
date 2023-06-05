@@ -1,6 +1,6 @@
-from Aktor import Aktor
+from actor import Actor
 
-class OpenCloseAble(Aktor):
+class OpenCloseable(Actor):
     open = False
 
     def isOpen(self) -> bool:

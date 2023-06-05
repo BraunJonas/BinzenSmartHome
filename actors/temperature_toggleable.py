@@ -1,6 +1,6 @@
-from Aktor import Aktor
+from actor import Actor
 
-class TemperatureToggleAble(Aktor):
+class TemperatureToggleable(Actor):
     temp = 0
 
     def getTemperature(self) -> int:
