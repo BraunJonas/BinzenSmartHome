@@ -25,7 +25,7 @@ class GUI(customtkinter.CTk):
         super().__init__()
         # configure window
         self.title("Smart Home Controller")
-        self.geometry(f"{1100}x{580}")
+        self.geometry(f"{1200}x{600}")
 
         self.grid_columnconfigure((0, 1, 2), weight=1)
         self.grid_rowconfigure((0, 1), weight=0)
@@ -35,12 +35,7 @@ class GUI(customtkinter.CTk):
         self.roomListNames = []
         self.roomsFrame = customtkinter.CTkScrollableFrame(self, label_text="Rooms")
         self.roomsFrame.grid(
-            row=0,
-            column=0,
-            padx=(20, 0),
-            pady=(20, 0),
-            sticky="nsew",
-            columnspan=2,
+            row=0, column=0, padx=(20, 0), pady=(20, 0), sticky="nsew", columnspan=2
         )
         self.roomsFrame.grid_columnconfigure(0, weight=1)
         self.addRoomButton = customtkinter.CTkButton(
@@ -89,28 +84,15 @@ class GUI(customtkinter.CTk):
 
         self.addDeviceButton.grid(row=0, column=2, padx=10, pady=0)
 
-        # Heating controls
-        self.heating_frame = customtkinter.CTkScrollableFrame(
-            self, label_text="Temperature Control"
+        # Temperature controls
+        self.temperature_frame = customtkinter.CTkScrollableFrame(
+            self, label_text="Temperature Control", width=300
         )
-        self.heating_frame.grid(
+        self.temperature_frame.grid(
             row=0, column=2, padx=(20, 0), pady=(20, 0), sticky="nsew"
         )
-        self.heating_frame.grid_columnconfigure(0, weight=1)
-        self.heating_switches = []
-        for room in self.roomList:
-            devices = room.getDevices()
-            for index, device in enumerate(devices):
-                if isinstance(device, HeatingDevice) or isinstance(
-                    device, CoolingDevice
-                ):
-                    switch = customtkinter.CTkSwitch(
-                        master=self.heating_frame,
-                        text=device.getName(),
-                        variable=device,
-                    )
-                    switch.grid(row=index, column=0, padx=10, pady=(0, 20))
-                    self.heating_switches.append(switch)
+        self.temperature_frame.grid_columnconfigure(0, weight=1)
+        self.temperature_sliders = []
 
         # Multimedia
         self.multimedia_frame = customtkinter.CTkScrollableFrame(
@@ -165,6 +147,11 @@ class GUI(customtkinter.CTk):
             else:
                 device.open(True)
 
+    def slider_event(self, value, device: Device, label):
+        if isinstance(device, CoolingDevice) or isinstance(device, HeatingDevice):
+            label.configure(text=int(value))
+            device.setTemperature(int(value))
+
     def addRoom(self):
         dialog = customtkinter.CTkInputDialog(text="Enter room name", title="add Room")
         newRoom = Room(dialog.get_input())
@@ -177,15 +164,24 @@ class GUI(customtkinter.CTk):
         self.optionRoom.configure(values=self.roomListNames)
 
     def addTemperatureControl(self, device: Device):
-        switch = customtkinter.CTkSwitch(
-            master=self.heating_frame,
-            text=device.getName(),
-            command=lambda: self.switch_event(device),
-            onvalue="on",
-            offvalue="off",
+        index = len(self.temperature_sliders) + 1
+
+        label = customtkinter.CTkLabel(
+            master=self.temperature_frame, text=device.getName()
         )
-        switch.grid(row=len(self.heating_switches) + 1, column=0, padx=10, pady=(0, 20))
-        self.heating_switches.append(switch)
+        label.grid(row=index, column=0, padx=10, pady=(0, 10))
+
+        label = customtkinter.CTkLabel(self.temperature_frame, text=15)
+        label.grid(row=index, column=2, padx=10, pady=(0, 20))
+
+        slider = customtkinter.CTkSlider(
+            master=self.temperature_frame,
+            from_=0,
+            to=30,
+            command=lambda value: self.slider_event(value, device, label),
+        )
+        slider.grid(row=index, column=1, padx=10, pady=(0, 20))
+        self.temperature_sliders.append(slider)
 
     def addDoor(self, device: Device):
         switch = customtkinter.CTkSwitch(
@@ -252,9 +248,9 @@ class GUI(customtkinter.CTk):
             self.addDoor(garageDoor)
 
         elif selectedDeviceType == "Heating Device":
-            HeatingDevice = HeatingDevice(deviceName)
-            selectedRoom.addDevice(HeatingDevice)
-            self.addTemperatureControl(HeatingDevice)
+            heatingDevice = HeatingDevice(deviceName)
+            selectedRoom.addDevice(heatingDevice)
+            self.addTemperatureControl(heatingDevice)
 
         elif selectedDeviceType == "Light":
             light = Light(deviceName)
