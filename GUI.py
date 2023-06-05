@@ -11,6 +11,8 @@ from IntensityLight import IntensityLight
 from Tv import Tv
 from Window import Window
 from Door import Door
+from Device import Device
+
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme(
@@ -49,6 +51,7 @@ class GUI(customtkinter.CTk):
         self.addRoomButton.grid(row=0, column=0, padx=20, pady=0)
 
         # Devices
+        self.deviceList = []
         self.devicesFrame = customtkinter.CTkScrollableFrame(self, label_text="Devices")
         self.devicesFrame.grid(
             row=1, column=0, padx=(20, 0), pady=(20, 0), sticky="nsew", columnspan=2
@@ -85,23 +88,29 @@ class GUI(customtkinter.CTk):
         )
 
         self.addDeviceButton.grid(row=0, column=2, padx=10, pady=0)
-        self.deviceLabels = []
 
         # Heating controls
         self.heating_frame = customtkinter.CTkScrollableFrame(
-            self, label_text="Heating"
+            self, label_text="Temperature Control"
         )
         self.heating_frame.grid(
             row=0, column=2, padx=(20, 0), pady=(20, 0), sticky="nsew"
         )
         self.heating_frame.grid_columnconfigure(0, weight=1)
         self.heating_switches = []
-        for i in range(100):
-            switch = customtkinter.CTkSwitch(
-                master=self.heating_frame, text=f"Heizung {i}"
-            )
-            switch.grid(row=i, column=0, padx=10, pady=(0, 20))
-            self.heating_switches.append(switch)
+        for room in self.roomList:
+            devices = room.getDevices()
+            for index, device in enumerate(devices):
+                if isinstance(device, HeatingDevice) or isinstance(
+                    device, CoolingDevice
+                ):
+                    switch = customtkinter.CTkSwitch(
+                        master=self.heating_frame,
+                        text=device.getName(),
+                        variable=device,
+                    )
+                    switch.grid(row=index, column=0, padx=10, pady=(0, 20))
+                    self.heating_switches.append(switch)
 
         # Multimedia
         self.multimedia_frame = customtkinter.CTkScrollableFrame(
@@ -112,24 +121,16 @@ class GUI(customtkinter.CTk):
         )
         self.multimedia_frame.grid_columnconfigure(0, weight=1)
         self.multimedia_switches = []
-        for i in range(100):
-            switch = customtkinter.CTkSwitch(
-                master=self.multimedia_frame, text=f"Door {i}"
-            )
-            switch.grid(row=i, column=0, padx=10, pady=(0, 20))
-            self.multimedia_switches.append(switch)
 
         # doors
-        self.doors_frame = customtkinter.CTkScrollableFrame(self, label_text="Doors")
+        self.doors_frame = customtkinter.CTkScrollableFrame(
+            self, label_text="Doors and Windows"
+        )
         self.doors_frame.grid(
             row=1, column=2, padx=(20, 0), pady=(20, 0), sticky="nsew"
         )
         self.doors_frame.grid_columnconfigure(0, weight=1)
         self.doors_switches = []
-        for i in range(100):
-            switch = customtkinter.CTkSwitch(master=self.doors_frame, text=f"Door {i}")
-            switch.grid(row=i, column=0, padx=10, pady=(0, 20))
-            self.doors_switches.append(switch)
 
         # lights
         self.lights_frame = customtkinter.CTkScrollableFrame(self, label_text="Lights")
@@ -138,12 +139,31 @@ class GUI(customtkinter.CTk):
         )
         self.lights_frame.grid_columnconfigure(0, weight=1)
         self.lights_switches = []
-        for i in range(100):
-            switch = customtkinter.CTkSwitch(
-                master=self.lights_frame, text=f"Lampe {i}"
-            )
-            switch.grid(row=i, column=0, padx=10, pady=(0, 20))
-            self.lights_switches.append(switch)
+
+    def switch_event(self, device: Device):
+        if isinstance(device, AudioDevice):
+            if device.isRunning():
+                device.setRunning(False)
+            else:
+                device.setRunning(True)
+                device.playAudio()
+        if isinstance(device, Tv):
+            if device.isRunning():
+                device.setRunning(False)
+            else:
+                device.setRunning(True)
+                device.playVideo()
+
+        if isinstance(device, Light):
+            if device.isRunning():
+                device.setRunning(False)
+            else:
+                device.setRunning(True)
+        if isinstance(device, Door):
+            if device.isOpen():
+                device.open(False)
+            else:
+                device.open(True)
 
     def addRoom(self):
         dialog = customtkinter.CTkInputDialog(text="Enter room name", title="add Room")
@@ -156,6 +176,52 @@ class GUI(customtkinter.CTk):
         self.roomListNames.append(newRoom.getName())
         self.optionRoom.configure(values=self.roomListNames)
 
+    def addTemperatureControl(self, device: Device):
+        switch = customtkinter.CTkSwitch(
+            master=self.heating_frame,
+            text=device.getName(),
+            command=lambda: self.switch_event(device),
+            onvalue="on",
+            offvalue="off",
+        )
+        switch.grid(row=len(self.heating_switches) + 1, column=0, padx=10, pady=(0, 20))
+        self.heating_switches.append(switch)
+
+    def addDoor(self, device: Device):
+        switch = customtkinter.CTkSwitch(
+            master=self.doors_frame,
+            text=device.getName(),
+            command=lambda: self.switch_event(device),
+            onvalue="on",
+            offvalue="off",
+        )
+        switch.grid(row=len(self.doors_switches) + 1, column=0, padx=10, pady=(0, 20))
+        self.doors_switches.append(switch)
+
+    def addLights(self, device: Device):
+        switch = customtkinter.CTkSwitch(
+            master=self.lights_frame,
+            text=device.getName(),
+            command=lambda: self.switch_event(device),
+            onvalue="on",
+            offvalue="off",
+        )
+        switch.grid(row=len(self.lights_switches) + 1, column=0, padx=10, pady=(0, 20))
+        self.lights_switches.append(switch)
+
+    def addMultimedia(self, device: Device):
+        switch = customtkinter.CTkSwitch(
+            master=self.multimedia_frame,
+            text=device.getName(),
+            command=lambda: self.switch_event(device),
+            onvalue="on",
+            offvalue="off",
+        )
+        switch.grid(
+            row=len(self.multimedia_switches) + 1, column=0, padx=10, pady=(0, 20)
+        )
+        self.multimedia_switches.append(switch)
+
     def addDevice(self):
         dialog = customtkinter.CTkInputDialog(text="device name:", title="Add device")
         selectedRoom = None
@@ -166,39 +232,63 @@ class GUI(customtkinter.CTk):
         selectedDeviceType = self.optionDeviceType.get()
 
         if selectedDeviceType == "Audio Device":
-            selectedRoom.addDevice(AudioDevice(deviceName))
+            audioDevice = AudioDevice(deviceName)
+            selectedRoom.addDevice(audioDevice)
+            self.addMultimedia(audioDevice)
+
         elif selectedDeviceType == "Cooling Device":
-            selectedRoom.addDevice(CoolingDevice(deviceName))
+            coolingDevice = CoolingDevice(deviceName)
+            selectedRoom.addDevice(coolingDevice)
+            self.addTemperatureControl(coolingDevice)
+
         elif selectedDeviceType == "Door":
-            selectedRoom.addDevice(Door(deviceName))
+            door = Door(deviceName)
+            selectedRoom.addDevice(door)
+            self.addDoor(door)
+
         elif selectedDeviceType == "Garage Door":
+            garageDoor = GarageDoor(deviceName)
             selectedRoom.addDevice(GarageDoor(deviceName))
+            self.addDoor(garageDoor)
+
         elif selectedDeviceType == "Heating Device":
-            selectedRoom.addDevice(HeatingDevice(deviceName))
+            HeatingDevice = HeatingDevice(deviceName)
+            selectedRoom.addDevice(HeatingDevice)
+            self.addTemperatureControl(HeatingDevice)
+
         elif selectedDeviceType == "Light":
-            selectedRoom.addDevice(Light(deviceName))
+            light = Light(deviceName)
+            selectedRoom.addDevice(light)
+            self.addLights(light)
+
         elif selectedDeviceType == "dimmable Light":
-            selectedRoom.addDevice(IntensityLight(deviceName))
+            dimmableLight = IntensityLight(deviceName)
+            selectedRoom.addDevice(dimmableLight)
+            self.addLights(dimmableLight)
+
         elif selectedDeviceType == "TV":
-            selectedRoom.addDevice(Tv(deviceName))
+            tv = Tv(deviceName)
+            selectedRoom.addDevice(tv)
+            self.addMultimedia(tv)
+
         elif selectedDeviceType == "Window":
-            selectedRoom.addDevice(Window(deviceName))
+            window = Window(deviceName)
+            selectedRoom.addDevice(window)
+            self.addMultimedia(window)
 
         deviceRoom = customtkinter.CTkLabel(
             master=self.devicesFrame, text=selectedRoom.getName()
         )
-        deviceRoom.grid(row=len(self.deviceLabels) + 1, column=0, padx=10, pady=(0, 10))
+        deviceRoom.grid(row=len(self.deviceList) + 1, column=0, padx=10, pady=(0, 10))
 
         deviceType = customtkinter.CTkLabel(
             master=self.devicesFrame, text=selectedDeviceType
         )
-        deviceType.grid(row=len(self.deviceLabels) + 1, column=1, padx=10, pady=(0, 10))
+        deviceType.grid(row=len(self.deviceList) + 1, column=1, padx=10, pady=(0, 10))
 
         deviceLabel = customtkinter.CTkLabel(master=self.devicesFrame, text=deviceName)
-        deviceLabel.grid(
-            row=len(self.deviceLabels) + 1, column=2, padx=10, pady=(0, 10)
-        )
-        self.deviceLabels.append(deviceLabel)
+        deviceLabel.grid(row=len(self.deviceList) + 1, column=2, padx=10, pady=(0, 10))
+        self.deviceList.append(deviceLabel)
 
     def startSetup(self):
         # add rooms
