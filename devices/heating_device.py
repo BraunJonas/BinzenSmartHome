@@ -1,8 +1,6 @@
-from device import Device
+from .device import Device
 from sensors.temperature_measurable import TemperatureMeasureable
 from actors.temperature_toggleable import TemperatureToggleable
-
-
 
 class HeatingDevice(Device, TemperatureMeasureable, TemperatureToggleable):
     def __init__(self, name: str):

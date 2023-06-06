@@ -1,5 +1,4 @@
-from actor import Actor
-
+from .actor import Actor
 
 class SwitchOnOffable(Actor):
     running = False

@@ -1,4 +1,4 @@
-from actor import Actor
+from .actor import Actor
 
 class OpenCloseable(Actor):
     open = False

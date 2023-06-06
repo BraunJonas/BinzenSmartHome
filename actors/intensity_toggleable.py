@@ -1,7 +1,6 @@
-from actor import Actor
+from .actor import Actor
 
-
-class IntensityToggleAble(Actor):
+class IntensityToggleable(Actor):
     intensity = 0
 
     def getIntensity(self) -> int:

@@ -1,7 +1,5 @@
-from device import Device
+from .device import Device
 from actors.open_closeable import OpenCloseable
-
-
 
 class GarageDoor(Device, OpenCloseable):
     def __init__(self, name: str):

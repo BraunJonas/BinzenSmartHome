@@ -1,6 +1,6 @@
 from random import randint
 
-from sensor import Sensor
+from .sensor import Sensor
 
 
 class TemperatureMeasureable(Sensor):

@@ -1,8 +1,6 @@
-from device import Device
+from .device import Device
 from actors.intensity_toggleable import IntensityToggleable
 from actors.switch_on_offable import SwitchOnOffable
-
-
 
 class AudioDevice(Device, IntensityToggleable, SwitchOnOffable):
     def __init__(self, name: str):

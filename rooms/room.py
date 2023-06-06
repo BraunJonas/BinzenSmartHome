@@ -1,7 +1,5 @@
 from devices.device import Device
 
-
-
 class Room:
     name = ""
     devices = []

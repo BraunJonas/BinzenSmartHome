@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from random import randint
-
 from numpy import number
-from sensor import Sensor
+
+from .sensor import Sensor
 
 class LightIntensityMeasurable(Sensor):
 

@@ -1,8 +1,6 @@
-from device import Device
+from .device import Device
 from sensors.light_intensity_measurable import LightIntensityMeasurable
 from actors.open_closeable import OpenCloseable
-
-
 
 class Window(Device, LightIntensityMeasurable, OpenCloseable):
     def __init__(self, name: str):

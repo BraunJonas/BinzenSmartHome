@@ -1,12 +1,9 @@
-
-from device import Device 
+from .device import Device 
 from sensors.light_intensity_measurable import LightIntensityMeasurable
 from actors.switch_on_offable import SwitchOnOffable
 from actors.intensity_toggleable import IntensityToggleable
 
-<
-
-class Light(Device, SwitchOnOffable, LightIntensityMeasureable):
+class Light(Device, SwitchOnOffable, LightIntensityMeasurable):
     def __init__(self, name: str):
         print("Light " + name + " has been created")
         super().__init__(name)
