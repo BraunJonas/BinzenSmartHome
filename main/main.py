@@ -1,4 +1,3 @@
-
 import customtkinter
 from devices.multimedia_devices import AudioDevice
 from devices.cooling_device import CoolingDevice
@@ -146,7 +145,11 @@ class GUI(customtkinter.CTk):
                 device.setRunning(False)
             else:
                 device.setRunning(True)
-        elif isinstance(device, Door):
+        elif (
+            isinstance(device, Door)
+            or isinstance(device, GarageDoor)
+            or isinstance(device, Window)
+        ):
             if device.isOpen():
                 device.setOpen(False)
             else:
@@ -202,7 +205,7 @@ class GUI(customtkinter.CTk):
         switch = customtkinter.CTkSwitch(
             master=self.doors_frame,
             text=device.getName(),
-            command=lambda: device.lock(),
+            command=lambda: self.switch_event(device),
             onvalue="on",
             offvalue="off",
         )
@@ -388,4 +391,3 @@ if __name__ == "__main__":
     app = GUI()
     app.startSetup()
     app.mainloop()
-
