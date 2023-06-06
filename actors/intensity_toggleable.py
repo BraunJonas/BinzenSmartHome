@@ -1,13 +1,14 @@
 from actor import Actor
 
-class IntensityToggleable(Actor):
 
-    intencity =0
+class IntensityToggleAble(Actor):
+    intensity = 0
 
-    def getIntencity(self) -> int:
-        return self.intencity    
-    
-    def setIntencity(self, intencity:int):
-        if ( intencity > 100 or intencity < 0):
+    def getIntensity(self) -> int:
+        return self.intensity
+
+    def setIntensity(self, intensity: int):
+        if intensity > 100 or intensity < 0:
             raise Exception("not possible")
-        self.intencity = intencity
+        self.intensity = intensity
+

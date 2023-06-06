@@ -1,5 +1,6 @@
 from actor import Actor
 
+
 class SwitchOnOffable(Actor):
     running = False
         
@@ -8,3 +9,4 @@ class SwitchOnOffable(Actor):
 
     def isRunning(self) -> bool:
         return self.running
+

@@ -1,5 +1,6 @@
 from actor import Actor
 
+
 class TemperatureToggleable(Actor):
     temp = 0
 
@@ -12,3 +13,4 @@ class TemperatureToggleable(Actor):
         self.temp = temp
 
     
+

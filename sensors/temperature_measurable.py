@@ -2,6 +2,7 @@ from random import randint
 
 from sensor import Sensor
 
+
 class TemperatureMeasureable(Sensor):
 
     def measureTemperature(self) -> int:
@@ -12,3 +13,4 @@ class TemperatureMeasureable(Sensor):
             return True
         else:
             return False
+
