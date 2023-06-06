@@ -1,3 +1,4 @@
+
 import customtkinter
 from devices.multimedia_devices import AudioDevice
 from devices.cooling_device import CoolingDevice
@@ -387,3 +388,4 @@ if __name__ == "__main__":
     app = GUI()
     app.startSetup()
     app.mainloop()
+

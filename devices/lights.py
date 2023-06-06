@@ -1,8 +1,10 @@
-from device import Device
+
+from device import Device 
 from sensors.light_intensity_measurable import LightIntensityMeasurable
 from actors.switch_on_offable import SwitchOnOffable
 from actors.intensity_toggleable import IntensityToggleable
 
+<
 
 class Light(Device, SwitchOnOffable, LightIntensityMeasureable):
     def __init__(self, name: str):
@@ -31,3 +33,4 @@ class IntensityLight(IntensityToggleable, Light):
     def setIntensity(self, intensity):
         super().setIntensity(intensity)
         print("IntensityLight " + self.name + " set to intensity: " + str(intensity))
+

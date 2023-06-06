@@ -3,6 +3,7 @@ from actors.intensity_toggleable import IntensityToggleable
 from actors.switch_on_offable import SwitchOnOffable
 
 
+
 class AudioDevice(Device, IntensityToggleable, SwitchOnOffable):
     def __init__(self, name: str):
         print("Audiodevice " + name + " has been created")
@@ -34,3 +35,4 @@ class Tv(AudioDevice):
     def playVideo(self):
         if self.isRunning():
             print("AudioDevice " + str(self.name) + " is playing video")
+

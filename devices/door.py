@@ -2,6 +2,7 @@ from device import Device
 from actors.open_closeable import OpenCloseable
 
 
+
 class Door(Device, OpenCloseable):
     def __init__(self, name: str):
         print("Door " + name + " has been created")
@@ -20,3 +21,4 @@ class Door(Device, OpenCloseable):
 
     def unlock(self):
         print("Door " + str(self.name) + " unlocked")
+

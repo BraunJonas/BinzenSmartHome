@@ -3,6 +3,7 @@ from sensors.temperature_measurable import TemperatureMeasureable
 from actors.temperature_toggleable import TemperatureToggleable
 
 
+
 class HeatingDevice(Device, TemperatureMeasureable, TemperatureToggleable):
     def __init__(self, name: str):
         print("HeatingDevice " + name + " has been created")
@@ -22,3 +23,4 @@ class HeatingDevice(Device, TemperatureMeasureable, TemperatureToggleable):
         if self.getTemperature > self.measureTemperature:
             return True
         return False
+

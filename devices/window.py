@@ -3,6 +3,7 @@ from sensors.light_intensity_measurable import LightIntensityMeasurable
 from actors.open_closeable import OpenCloseable
 
 
+
 class Window(Device, LightIntensityMeasurable, OpenCloseable):
     def __init__(self, name: str):
         print("Window " + name + " has been created")
@@ -22,3 +23,4 @@ class Window(Device, LightIntensityMeasurable, OpenCloseable):
 
     def openBlinds(self):
         print("Window: Close blinds")
+
