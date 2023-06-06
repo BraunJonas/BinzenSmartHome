@@ -9,34 +9,33 @@ from Door import Door
 if __name__ == "__main__":
     room = Room("Raum1")
     room.addDevice(Light("Licht"))
-    light=room.getDevices()[0]
+    light = room.getDevices()[0]
     print(light.getName())
     light.setRunning(True)
     print(light.isRunning())
-    if (light.checkEverythingNormal == False):
+    if light.checkEverythingNormal == False:
         print(light.measureLightInensity)
     light.activateNightMode()
 
     room.addDevice(IntensityLight("IntensityLight"))
-    light=room.getDevices()[1]
+    light = room.getDevices()[1]
     print(light.getName())
     light.setRunning(True)
     print(light.isRunning())
-    if (light.checkEverythingNormal == False):
+    if light.checkEverythingNormal == False:
         print(light.measureLightInensity)
     light.activateNightMode()
     try:
-        light.setIntencity(10)
+        light.setIntensity(10)
     except:
         print("Not possible")
     try:
-        light.setIntencity(110)
+        light.setIntensity(110)
     except:
         print("Not possible")
 
-    
     room.addDevice(Tv("Tv"))
-    tv=room.getDevices()[2]
+    tv = room.getDevices()[2]
     print(tv.getName())
     tv.setRunning(True)
     print(tv.isRunning())
@@ -44,37 +43,36 @@ if __name__ == "__main__":
     tv.playAudio()
     tv.activateNightMode()
     try:
-        light.setIntencity(10)
+        light.setIntensity(10)
     except:
         print("Not possible")
     try:
-        light.setIntencity(110)
+        light.setIntensity(110)
     except:
         print("Not possible")
     tv.playVideo()
     tv.playAudio()
 
-
     room.addDevice(Window("Tv"))
-    window=room.getDevices()[3]
+    window = room.getDevices()[3]
     print(window.getName())
     window.setOpen(True)
     print(window.isOpen())
     window.activateNightMode()
-    if (window.checkEverythingNormal == False):
+    if window.checkEverythingNormal == False:
         print(window.measureTemperature())
 
     room.addDevice(Door("Tv"))
-    door=room.getDevices()[4]
+    door = room.getDevices()[4]
     print(door.getName())
     door.setOpen(True)
     print(door.isOpen())
     door.activateNightMode()
 
     room.addDevice(CoolingDevice("Cool"))
-    cool=room.getDevices()[5]
+    cool = room.getDevices()[5]
     print(cool.getName())
-    
+
     try:
         cool.setTemperature(10)
     except:
@@ -84,5 +82,5 @@ if __name__ == "__main__":
         cool.setTemperature(111)
     except:
         print("Not possible")
-    
+
     cool.activateNightMode()

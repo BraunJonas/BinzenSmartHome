@@ -1,16 +1,17 @@
-from IntencityToggleAble import IntencityToggleAble
+from IntensityToggleAble import IntensityToggleAble
 from Light import Light
 
-class IntensityLight(IntencityToggleAble,Light):
-    def __init__(self, name:str):
-        print("IntensityLight "+ name +" has been created")
+
+class IntensityLight(IntensityToggleAble, Light):
+    def __init__(self, name: str):
+        print("IntensityLight " + name + " has been created")
         super().__init__(name)
 
     def activateNightMode(self):
         super().activateNightMode()
-        self.setIntencity(5)
-        print("IntesnsityLight "+str(self.name) + " activated Night Mode")
+        self.setIntensity(5)
+        print("IntensityLight " + str(self.name) + " activated Night Mode")
 
-    def setIntencity(self, intencity):
-        super().setIntencity(intencity)
-        print("IntensityLight "+ self.name +" set to intensity: "+ str(intencity))
+    def setIntensity(self, intensity):
+        super().setIntensity(intensity)
+        print("IntensityLight " + self.name + " set to intensity: " + str(intensity))

@@ -1,5 +1,5 @@
 from Device import Device
-from LightIntencityMeasurable import LightIntensityMeasureAble
+from LightIntensityMeasurable import LightIntensityMeasureAble
 from SwitchOnOffAble import SwitchOnOffAble
 
 

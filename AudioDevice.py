@@ -1,9 +1,9 @@
 from Device import Device
-from IntencityToggleAble import IntencityToggleAble
+from IntensityToggleAble import IntensityToggleAble
 from SwitchOnOffAble import SwitchOnOffAble
 
 
-class AudioDevice(Device, IntencityToggleAble, SwitchOnOffAble):
+class AudioDevice(Device, IntensityToggleAble, SwitchOnOffAble):
     def __init__(self, name: str):
         print("Audiodevice " + name + " has been created")
         super().__init__(name)
@@ -12,13 +12,13 @@ class AudioDevice(Device, IntencityToggleAble, SwitchOnOffAble):
         super().setRunning(running)
         print("AudioDevice " + str(self.name) + " changed running to " + str(running))
 
-    def setIntencity(self, intencity):
-        super().setIntencity(intencity)
-        print("Audiodevice " + self.name + " set to intensity: " + str(intencity))
+    def setIntensity(self, intensity):
+        super().setIntensity(intensity)
+        print("Audiodevice " + self.name + " set to intensity: " + str(intensity))
 
     def activateNightMode(self):
         self.setRunning(False)
-        self.setIntencity(5)
+        self.setIntensity(5)
         print("AudioDevice " + str(self.name) + " activated Night Mode")
 
     def playAudio(self):

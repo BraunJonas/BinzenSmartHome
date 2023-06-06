@@ -4,13 +4,13 @@ from random import randint
 from numpy import number
 from Sensor import Sensor
 
-class LightIntensityMeasureAble(Sensor):
 
-    def measureLightInensity(self) -> number:
-        return randint(0,100)
-    
+class LightIntensityMeasureAble(Sensor):
+    def measureLightIntensity(self) -> number:
+        return randint(0, 100)
+
     def checkEverythingNormal(self) -> bool:
-        if ( self.measureLightInensity() > 10 and self.measureLightInensity() < 90 ):
+        if self.measureLightIntensity() > 10 and self.measureLightIntensity() < 90:
             return True
         else:
             return False
