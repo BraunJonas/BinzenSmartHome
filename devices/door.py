@@ -1,8 +1,8 @@
-from Device import Device
-from OpenCloseAble import OpenCloseAble
+from device import Device
+from actors.open_closeable import OpenCloseable
 
 
-class Door(Device, OpenCloseAble):
+class Door(Device, OpenCloseable):
     def __init__(self, name: str):
         print("Door " + name + " has been created")
         super().__init__(name)

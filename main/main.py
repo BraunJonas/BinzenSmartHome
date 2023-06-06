@@ -1,17 +1,14 @@
-import tkinter
-import tkinter.messagebox
 import customtkinter
-from CoolingDevice import CoolingDevice
-from AudioDevice import AudioDevice
-from GarageDoor import GarageDoor
-from HeatingDevice import HeatingDevice
-from Light import Light
-from Room import Room
-from IntensityLight import IntensityLight
-from Tv import Tv
-from Window import Window
-from Door import Door
-from Device import Device
+from devices.multimedia_devices import AudioDevice
+from devices.cooling_device import CoolingDevice
+from devices.garage_door import GarageDoor
+from devices.heating_device import HeatingDevice
+from devices.lights import Light, IntensityLight
+from rooms.room import Room
+from devices.multimedia_devices import AudioDevice, Tv
+from devices.window import Window
+from devices.door import Door
+from devices.device import Device
 
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"

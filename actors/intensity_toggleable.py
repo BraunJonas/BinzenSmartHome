@@ -1,4 +1,4 @@
-from Aktor import Aktor
+from actor import Actor
 
 
 class IntensityToggleAble(Aktor):

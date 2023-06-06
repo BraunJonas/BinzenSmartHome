@@ -1,9 +1,9 @@
-from Device import Device
-from TemperatureMeasureAble import TemperatureMeasureAble
-from TemperatureToggleAble import TemperatureToggleAble
+from device import Device
+from sensors.temperature_measurable import TemperatureMeasureable
+from actors.temperature_toggleable import TemperatureToggleable
 
 
-class CoolingDevice(Device, TemperatureMeasureAble, TemperatureToggleAble):
+class CoolingDevice(Device, TemperatureMeasureable, TemperatureToggleable):
     def __init__(self, name: str):
         print("CoolingDevice " + name + " has been created")
         super().__init__(name)

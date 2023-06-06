@@ -1,4 +1,4 @@
-from Device import Device
+from devices.device import Device
 
 
 class Room:
