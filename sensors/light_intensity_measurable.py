@@ -1,10 +1,9 @@
 from abc import ABC, abstractmethod
 from random import randint
-
 from numpy import number
-from Sensor import Sensor
+from sensor import Sensor
 
-class LightIntensityMeasureAble(Sensor):
+class LightIntensityMeasurable(Sensor):
 
     def measureLightInensity(self) -> number:
         return randint(0,100)

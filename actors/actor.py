@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Aktor(ABC):
+class Actor(ABC):
     @abstractmethod
     def activateNightMode(self):
         pass

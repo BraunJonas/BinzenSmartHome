@@ -1,6 +1,6 @@
-from Aktor import Aktor
+from actor import Actor
 
-class SwitchOnOffAble(Aktor):
+class SwitchOnOffable(Actor):
     running = False
         
     def setRunning(self, running:bool):
