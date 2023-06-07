@@ -24,7 +24,7 @@ class AudioDevice(Device, IntensityToggleable, SwitchOnOffable):
         if self.isRunning():
             print("AudioDevice " + str(self.name) + " is playing audio")
 
-
+#LSP - Austauschbarkeit der Klassen: Tv kann anstelle von AudioDevice verwendet werden, ohne die Funktionalität zu beeinträchtigen
 class Tv(AudioDevice):
     def __init__(self, name: str):
         print("TV " + name + " has been created")
