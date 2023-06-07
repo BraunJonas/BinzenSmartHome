@@ -1,5 +1,8 @@
 from .actor import Actor
 
+# ISP - Aufteilung von Funktionen und Zuordnung zu spezifischen Klassen: 
+# Actor hat 4 Subklassen die jeweils spezifische Funktionen implementieren,
+# damit Klassen nur Methoden implementieren, die sie tatsächlich benötigen und übermäßige Abhängigkeit verhindert
 class IntensityToggleable(Actor):
     intensity = 0
 

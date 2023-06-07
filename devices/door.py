@@ -1,6 +1,8 @@
 from .device import Device
 from actors.open_closeable import OpenCloseable
 
+# OCP - offen für Erweiterungen, geschlossen für Modifikationen: 
+# Door erbt von Device und erweitert die Funktionalität ohne den bestehenden Code zu ändern
 class Door(Device, OpenCloseable):
     def __init__(self, name: str):
         print("Door " + name + " has been created")
