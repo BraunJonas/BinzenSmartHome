@@ -13,7 +13,7 @@ class Window(Device, LightIntensityMeasurable, OpenCloseable):
 
     def activateNightMode(self):
         self.setOpen(False)
-        self.closeBlades()
+        self.closeBlinds()
         print("Window " + str(self.name) + " activated Night Mode ")
 
     def closeBlinds(self):

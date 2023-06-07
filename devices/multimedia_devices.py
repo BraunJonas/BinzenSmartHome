@@ -32,5 +32,5 @@ class Tv(AudioDevice):
 
     def playVideo(self):
         if self.isRunning():
-            print("AudioDevice " + str(self.name) + " is playing video")
+            print("VideoDevice " + str(self.name) + " is playing video")
 
