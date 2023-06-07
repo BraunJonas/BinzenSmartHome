@@ -278,8 +278,10 @@ class GUI(customtkinter.CTk):
                 onvalue="on",
                 offvalue="off",
             )
-        switch.grid(row=len(self.lights_controls) + 1, column=1, padx=10, pady=(0, 20))
-        self.lights_controls.append(switch)
+            switch.grid(
+                row=len(self.lights_controls) + 1, column=1, padx=10, pady=(0, 20)
+            )
+            self.lights_controls.append(switch)
 
     def addMultimedia(self, device: Device):
         switch = customtkinter.CTkSwitch(
