@@ -1,4 +1,4 @@
-# SDP # SDP - die Abhängigkeit verläuft in die selbe Richtung wie die Stabilität, sodass Device eine stabilere Klasse ist, als die Subklassen von Device
+# SDP - die Abhängigkeit verläuft in die selbe Richtung wie die Stabilität, sodass Device eine stabilere Klasse ist, als die Subklassen von Device
 
 # SRP - alle Subklassen von Device haben eine klare Verantwortung und eine Aufgabe: z.B. ist CoolingDevice nur für die Steuerung von Kühlgeräten zuständig
 
