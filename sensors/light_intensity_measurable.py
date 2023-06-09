@@ -1,10 +1,7 @@
-from abc import ABC, abstractmethod
 from random import randint
 from numpy import number
-
 from .sensor import Sensor
 
-# DIP - Abhängigkeiten nur auf Abstraktionen: LightIntensityMeasurable nur von abstrakter Klasse Sensor abhängig
 class LightIntensityMeasurable(Sensor):
 
     def measureLightInensity(self) -> number:

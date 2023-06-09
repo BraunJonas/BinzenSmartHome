@@ -2,6 +2,8 @@ from .device import Device
 from actors.intensity_toggleable import IntensityToggleable
 from actors.switch_on_offable import SwitchOnOffable
 
+# CCP - AudioDevice und Tv sind geschlossen gegenüber der selben Art von Veränderungen und sind deshalb in einem Modul zusammengefasst
+
 class AudioDevice(Device, IntensityToggleable, SwitchOnOffable):
     def __init__(self, name: str):
         print("Audiodevice " + name + " has been created")
@@ -25,6 +27,7 @@ class AudioDevice(Device, IntensityToggleable, SwitchOnOffable):
             print("AudioDevice " + str(self.name) + " is playing audio")
 
 #LSP - Austauschbarkeit der Klassen: Tv kann anstelle von AudioDevice verwendet werden, ohne die Funktionalität zu beeinträchtigen
+
 class Tv(AudioDevice):
     def __init__(self, name: str):
         print("TV " + name + " has been created")

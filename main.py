@@ -10,6 +10,8 @@ from devices.window import Window
 from devices.door import Door
 from devices.device import Device
 
+# ADP - Es gibt keine Zyklen in der Abhängigkeitsstruktur des gesamten Codes
+
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme(

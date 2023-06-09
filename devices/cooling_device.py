@@ -2,7 +2,6 @@ from .device import Device
 from sensors.temperature_measurable import TemperatureMeasureable
 from actors.temperature_toggleable import TemperatureToggleable
 
-# SRP - klare Verantwortung und eine Aufgabe: CoolingDevice nur für Steuerung von Kühlgeräten zuständig
 class CoolingDevice(Device, TemperatureMeasureable, TemperatureToggleable):
     def __init__(self, name: str):
         print("CoolingDevice " + name + " has been created")
