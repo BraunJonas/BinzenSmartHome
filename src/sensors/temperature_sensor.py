@@ -1,9 +1,9 @@
 from random import randint
 from .sensor import Sensor
 
-class TemperatureMeasureable(Sensor):
+class TemperatureSensor(Sensor):
 
-    def measureTemperature(self) -> int:
+    def getData(self) -> int:
         return randint(-10,55)
     
     def checkEverythingNormal(self) -> bool:
