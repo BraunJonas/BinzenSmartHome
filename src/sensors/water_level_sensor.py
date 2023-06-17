@@ -1,14 +1,13 @@
 from random import randint
 from .sensor import Sensor
 
-class TemperatureSensor(Sensor):
+class WaterLevelSensor(Sensor):
 
     def getData(self) -> int:
-        return randint(-10,55)
+        return randint(0,100)
     
     def checkEverythingNormal(self) -> bool:
-        if ( self.getData() > -5 and self.measureTemperature() < 40 ):
+        if ( self.getData() > 40 ):
             return True
         else:
             return False
-

@@ -1,8 +1,13 @@
+import time
 from devices.multimedia_devices import AudioDevice
+from devices.rain_barrel_device import RainBarrel
+from devices.watering_device import WateringDeviceGround
+from devices.watering_strategy import WateringStrategySaveUp
 from rooms.room import Room
 from sensors.temperature_sensor import TemperatureSensor
 from devices.temperature_device import TemeratureDevice
 from devices.frost_heating import FrostHeating
+from sensors.water_level_sensor import WaterLevelSensor
 
 
 # ADP - Es gibt keine Zyklen in der Abhängigkeitsstruktur des gesamten Codes
@@ -24,13 +29,35 @@ def setupRooms():
 
 
 if __name__ == "__main__":
-    frostheizung1 = FrostHeating()
-    frostheizung1.setName("AD")
-    frostheizung1.setRunning(False)
-    frostheizung2 = FrostHeating()
-    print(frostheizung2.getName())
+
+    #TODO
+    #Räume und Zonen -> Klassen erstellen
+    #Factory für Devices 
+    #Adapter Schnittstelle für KI und Wetterstation
+    #Observer für Alarme? / Mediator
     
-    frostheizung1.simuliereEinenThreadDurchlauf()
+
+
+
+
+    # frost = FrostHeating.getInstance()
+    # frost.setRunning(True)
+
+    # frost2 = FrostHeating.getInstance()
+    # print(frost2.isRunning())
+    # print(frost.isRunning())
+
+    groundWater = WateringDeviceGround("WATER")
+    groundWater.setWateringStrategy((WateringStrategySaveUp()))
+    
+    sensor = WaterLevelSensor()
+    rainbarrel = RainBarrel.getInstance()
+    RainBarrel.setSensor(sensor)
+
+    while(True):
+        rainbarrel.simuliereEinenThreadDurchlauf()
+        groundWater.simuliereEinenThreadDurchlauf()
+        time.sleep(3)
     #for room in rooms:
         #for device in room.getDevices():
             #device.simuliereEinenThreadDurchlauf()

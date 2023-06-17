@@ -1,6 +1,6 @@
 class AmountAdjustable():
-    def getAmount(self) -> int:
+    def getAmount(self) -> float:
         raise NotImplementedError    
     
-    def setAmount(self, amount:int):
+    def setAmount(self, amount:float):
         raise NotImplementedError
