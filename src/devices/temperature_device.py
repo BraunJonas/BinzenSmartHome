@@ -15,6 +15,9 @@ class TemeratureDevice(Device, TemperatureAdjustable):
         self.target = temp
         print("TemperatureDevice " + str(self.name) + " set Target to " + str(temp))
 
+    def getTemperature(self) -> int:
+        return self.temperature
+
     def checkDifferenceToTarget(self) -> int:
         return self.target - self.sensor.getData()
     
