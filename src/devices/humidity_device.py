@@ -1,6 +1,5 @@
 from .device import Device
 from sensors.humidity_sensor import HumiditySensor
-from actors.percentage_adjustable import PercentageAdjustable
 
 class HumidityDevice(Device, HumiditySensor):
     
@@ -22,5 +21,6 @@ class HumidityDevice(Device, HumiditySensor):
         return self.target - self.sensor.getData()
     
     def simuliereEinenThreadDurchlauf(self):
+        self.sensor.setRandomData()
         diff = self.checkDifferenceToTarget()
         print(f"HumidityDevice {self.name} is trying to {'increase ' if diff<0 else 'decrease'} huidity. Difference to Target: {diff}" )

@@ -7,7 +7,7 @@ class WateringStrategySaveUp(WateringStrategy):
 
     def execute(self,amount: float)-> float:
         print("Watering Strategy Save up used: only watering 80%")
-        return round(amount * 0.823434,2)
+        return round(amount * 0.8,2)
     
 class WateringStrategyNormal(WateringStrategy):
 

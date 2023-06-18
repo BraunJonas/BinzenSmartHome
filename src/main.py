@@ -6,7 +6,6 @@ from devices.watering_strategy import WateringStrategySaveUp
 from rooms.room import Room
 from sensors.temperature_sensor import TemperatureSensor
 from devices.temperature_device import TemeratureDevice
-from devices.frost_heating import FrostHeating
 from sensors.water_level_sensor import WaterLevelSensor
 
 
