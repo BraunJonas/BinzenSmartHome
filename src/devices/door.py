@@ -14,8 +14,11 @@ class Door(Device, OpenCloseable):
         print("Door " + str(self.name) + " changed open to " + str(open))
 
     def isOpen(self) -> bool:
-        return self.isOpen   
+        return self.open   
 
+    def isLocked(self) -> bool:
+        return self.locked  
+    
     def setLocked(self, locked: bool):
         if(self.open and locked):
             print(f"Door {self.name} couldn't be locked because it is open")

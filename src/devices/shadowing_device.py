@@ -23,5 +23,6 @@ class ShadowingDevice(Device, LightSensor):
         return self.target - self.sensor.getData()
     
     def simuliereEinenThreadDurchlauf(self):
+        self.sensor.setRandomData()
         diff = self.checkDifferenceToTarget()
         print(f"ShadowingDevice {self.name} is trying to {'decrease ' if diff<0 else 'increase'} lightintensity. Difference to Target: {diff}" )

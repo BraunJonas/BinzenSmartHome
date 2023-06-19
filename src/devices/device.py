@@ -7,8 +7,6 @@
 
 class Device(): 
     def __init__(self, name:str):
-        print("INITDEVICE")
-        print(name)
         self.name = name
 
     def getName(self) -> str:

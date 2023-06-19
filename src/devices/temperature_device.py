@@ -22,5 +22,6 @@ class TemeratureDevice(Device, TemperatureAdjustable):
         return self.target - self.sensor.getData()
     
     def simuliereEinenThreadDurchlauf(self):
+        self.sensor.setRandomData()
         diff = self.checkDifferenceToTarget()
         print(f"TemperatureDevice {self.name} is {'cooling' if diff<0 else 'heating'} Difference to Target: {diff}" )

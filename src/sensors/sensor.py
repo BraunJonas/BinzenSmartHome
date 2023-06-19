@@ -22,5 +22,11 @@ class Sensor():
     
     def getData(self):
         raise NotImplementedError
+    
+    def setData(self):
+        raise NotImplementedError
+    
+    def setRandomData(self):
+        raise NotImplementedError
 
     

@@ -22,9 +22,9 @@ class RainBarrel(Device):
             print("Instance already existed: returning instance")
         return RainBarrel.__instance
     
-    @staticmethod
-    def setSensor(sensor: WaterLevelSensor):
-        RainBarrel.__instance.sensor = sensor
+    
+    def setSensor(self, sensor: WaterLevelSensor):
+        self.sensor = sensor
 
     def decideEnoughWater(self):
         if(self.sensor.checkEverythingNormal()):
