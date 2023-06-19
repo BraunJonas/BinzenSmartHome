@@ -1,16 +1,16 @@
-from devices.WaterEventListener import WaterEventListerner
-from devices.water_event_manager import WaterEventManager
+from devices.event_listener import EventListerner
+from devices.event_manager import EventManager
 from devices.watering_strategy import WateringStrategy, WateringStrategyNormal, WateringStrategySaveUp
 from .device import Device 
 from actors.amount_adjustable import AmountAdjustable
 
-class WateringDevice(Device, AmountAdjustable, WaterEventListerner):
+class WateringDevice(Device, AmountAdjustable, EventListerner):
     def __init__(self, name: str):
         print("WateringDevice " + name + " has been created")
         super().__init__(name)
         self.amount = 2
         self.strategy = WateringStrategyNormal()
-        WaterEventManager.subscribe(self)
+        EventManager.subscribe(self, "water")
 
     def setAmount(self, amount: float):
         self.amount = amount
@@ -24,11 +24,12 @@ class WateringDevice(Device, AmountAdjustable, WaterEventListerner):
 
     #Design Pattern Observer Listening auf Water Event
     #Design Pattern Strategy -> Wässerungsverhalten wird nach der Strategie bestimmt
-    def notify(self, enoughWater: bool):
-        if enoughWater:
-            self.setWateringStrategy(WateringStrategyNormal())
-        else:
-            self.setWateringStrategy(WateringStrategySaveUp())
+    def notify(self, event: str, additionalInformation: str):
+        if event == "water":
+            if additionalInformation == "Enough Water":
+                self.setWateringStrategy(WateringStrategyNormal())
+            elif additionalInformation == "Not enough Water":
+                self.setWateringStrategy(WateringStrategySaveUp())
     
 class WateringDeviceGround(WateringDevice, AmountAdjustable):
     def __init__(self, name: str):

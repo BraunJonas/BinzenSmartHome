@@ -1,5 +1,5 @@
 from devices.device import Device
-from devices.water_event_manager import WaterEventManager
+from devices.event_manager import EventManager
 from sensors.water_level_sensor import WaterLevelSensor
 
 class RainBarrel(Device):
@@ -35,14 +35,17 @@ class RainBarrel(Device):
         return False
     
     def simuliereEinenThreadDurchlauf(self):
-        print(self.enoughWater)
+        self.sensor.setRandomData()
         enoughWaterNew = self.decideEnoughWater()
         if enoughWaterNew:
             print(f"RainBarrel is full - no Water Saving necessary" )
+            if (not self.enoughWater == enoughWaterNew):
+                EventManager.notify("water", "Enough Water")
         else:
             print(f"RainBarrel is almost empty - Water Saving necessary" )
-        if (not self.enoughWater == enoughWaterNew):
-            WaterEventManager.notify(enoughWaterNew)
+            if (not self.enoughWater == enoughWaterNew):
+                EventManager.notify("water", "Not enough Water")
+        
         self.enoughWater = enoughWaterNew
 
     

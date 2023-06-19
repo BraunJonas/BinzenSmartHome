@@ -51,7 +51,7 @@ if __name__ == "__main__":
     
     sensor = WaterLevelSensor()
     rainbarrel = RainBarrel.getInstance()
-    RainBarrel.setSensor(sensor)
+    rainbarrel.setSensor(sensor)
 
     while(True):
         rainbarrel.simuliereEinenThreadDurchlauf()
