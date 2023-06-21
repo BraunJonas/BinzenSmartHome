@@ -1,10 +1,12 @@
+from devices.event_listener import EventListerner
+from devices.event_manager import EventManager
 from .device import Device
 from actors.percentage_adjustable import PercentageAdjustable
 from actors.switch_on_offable import SwitchOnOffable
 
 # CCP - AudioDevice und Tv sind geschlossen gegenüber der selben Art von Veränderungen und sind deshalb in einem Modul zusammengefasst
 
-class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable):
+class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner):
     
     def __init__(self, name: str):
         print("Audiodevice " + name + " has been created")
@@ -12,6 +14,21 @@ class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable):
         self.volume = 0
         self.running = False
         self.media = "nothing"
+        self.reactToAlarms = False
+
+    def setReactToAlarms(self,react: bool):
+        self.reactToAlarms = react
+        if react:
+            EventManager.subscribe(self,"alarm")
+        else:
+            EventManager.unsubscribe(self,"alarm")
+    
+    def getReactToAlarms(self)-> bool:
+        return self.reactToAlarms
+
+    def notify(self,event: str, additionalInformation: str):
+        if(event == "alarm"):
+            print("AudioDevice " + str(self.name) + "is reading Alarmmessage: "+ additionalInformation)
 
     def setRunning(self, running: bool):
         self.running = running 

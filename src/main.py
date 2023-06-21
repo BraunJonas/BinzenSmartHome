@@ -34,10 +34,6 @@ if __name__ == "__main__":
     #Factory für Devices 
     #Adapter Schnittstelle für KI und Wetterstation
     #Observer für Alarme? / Mediator
-    
-
-
-
 
     # frost = FrostHeating.getInstance()
     # frost.setRunning(True)
@@ -53,9 +49,15 @@ if __name__ == "__main__":
     rainbarrel = RainBarrel.getInstance()
     rainbarrel.setSensor(sensor)
 
+    audio = AudioDevice("AUDIO")
+    audio.setReactToAlarms(True)
+    tempsens = TemperatureSensor()
+    temp = TemeratureDevice("Temperaturdevice", tempsens)
+
     while(True):
         rainbarrel.simuliereEinenThreadDurchlauf()
         groundWater.simuliereEinenThreadDurchlauf()
+        temp.simuliereEinenThreadDurchlauf()
         time.sleep(3)
     #for room in rooms:
         #for device in room.getDevices():

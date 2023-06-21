@@ -1,3 +1,3 @@
 class EventListerner():
-    def notify(event: str, additionalInformation: str):
+    def notify(self, event: str, additionalInformation: str):
         raise NotImplementedError

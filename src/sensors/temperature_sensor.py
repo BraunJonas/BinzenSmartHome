@@ -7,7 +7,7 @@ class TemperatureSensor(Sensor):
         return self.data
     
     def checkEverythingNormal(self) -> bool:
-        if ( self.getData() > -5 and self.measureTemperature() < 40 ):
+        if ( self.getData() > -5 and self.getData() < 40 ):
             return True
         else:
             return False
