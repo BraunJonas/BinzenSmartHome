@@ -1,5 +1,6 @@
 from devices.device import Device
 from actors.switch_on_offable import SwitchOnOffable
+import logging
 
 
 class FrostHeating(Device, SwitchOnOffable):
@@ -10,6 +11,7 @@ class FrostHeating(Device, SwitchOnOffable):
         if FrostHeating.__instance != None:
             raise Exception("This is a Singleton class")
         super().__init__("Frostheating")
+        self.logger = logging.getLogger(__name__)
         self.running = False
         FrostHeating.__instance = self
 
@@ -25,7 +27,7 @@ class FrostHeating(Device, SwitchOnOffable):
 
     def setRunning(self, running: int):
         self.running = running
-        print("FrostHeating set running to " + str(running))
+        self.logger.info("FrostHeating set running to " + str(running))
 
     def isRunning(self) -> bool:
         return type(self).__instance.running
@@ -33,4 +35,4 @@ class FrostHeating(Device, SwitchOnOffable):
     def simuliereEinenThreadDurchlauf(self):
         #ask weather station for the weather
         # decide wether or not to set myself running 
-        print(f"FrostHeating {self.name} is {'running ' if self.running else 'not running'}" )
+        self.logger.info(f"FrostHeating {self.name} is {'running ' if self.running else 'not running'}" )

@@ -1,17 +1,21 @@
 from .device import Device
 from actors.open_closeable import OpenCloseable
+import logging
 
 class Door(Device, OpenCloseable):
     
     def __init__(self, name: str):
-        print("Door " + name + " has been created")
         super().__init__(name)
+        self.logger = logging.getLogger(__name__)
+        self.logger.info("Door " + name + " has been created")
         self.open = False
         self.locked = False
+        
+        
 
     def setOpen(self, open: bool):
         self.open = open
-        print("Door " + str(self.name) + " changed open to " + str(open))
+        self.logger.info("Door " + str(self.name) + " changed open to " + str(open))
 
     def isOpen(self) -> bool:
         return self.open   
@@ -21,11 +25,12 @@ class Door(Device, OpenCloseable):
     
     def setLocked(self, locked: bool):
         if(self.open and locked):
-            print(f"Door {self.name} couldn't be locked because it is open")
+            self.logger.info(f"Door {self.name} couldn't be locked because it is open")
             return
         self.locked = True
-        print("Door " + str(self.name) + "changed locked to" + str(locked))
+        self.logger.info("Door " + str(self.name) + "changed locked to" + str(locked))
 
     def simuliereEinenThreadDurchlauf(self):
-        print(f"Door {self.name} is {'open' if self.open else 'closed'} and {'locked' if self.locked else 'unlocked'}" )
+        self.logger.info(f"Door {self.name} is {'open' if self.open else 'closed'} and {'locked' if self.locked else 'unlocked'}" )
+        
 

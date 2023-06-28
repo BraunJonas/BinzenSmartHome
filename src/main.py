@@ -4,9 +4,13 @@ from devices.rain_barrel_device import RainBarrel
 from devices.watering_device import WateringDeviceGround
 from devices.watering_strategy import WateringStrategySaveUp
 from rooms.room import Room
+from devices.multimedia_devices import Tv
 from sensors.temperature_sensor import TemperatureSensor
 from devices.temperature_device import TemeratureDevice
 from sensors.water_level_sensor import WaterLevelSensor
+from devices.door import Door
+import logging
+import datetime
 
 
 # ADP - Es gibt keine Zyklen in der Abhängigkeitsstruktur des gesamten Codes
@@ -42,6 +46,13 @@ if __name__ == "__main__":
     # print(frost2.isRunning())
     # print(frost.isRunning())
 
+
+    logging.basicConfig(filename="SmartHomeLog.log", encoding="utf-8", level=logging.DEBUG)
+    logger = logging.getLogger()
+    logger.info(10*"-" + str(datetime.datetime.now()) + 75*"-")
+    door = Door("Tür")
+    door.setOpen(True)
+    tv = Tv("tv")
     groundWater = WateringDeviceGround("WATER")
     groundWater.setWateringStrategy((WateringStrategySaveUp()))
     
