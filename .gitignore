@@ -1,2 +1,3 @@
 .vscode/settings.json
 src/SmartHomeLog.log
+**/__pycache__/
