@@ -1,4 +1,6 @@
 from devices.event_listener import EventListerner
+import logging
+logger = logging.getLogger(__name__)
 
 
 class EventManager():
@@ -8,13 +10,13 @@ class EventManager():
     def subscribe(listener: EventListerner, event: str):
         EventManager.__listeners.append([listener, event])
         for l in EventManager.__listeners:
-            print(l[1])
+            logger.info(l[1])
 
     @staticmethod
     def unsubscribe(listener: EventListerner, event: str):
         EventManager.__listeners.remove([listener, event])
         for l in EventManager.__listeners:
-            print(l[1])
+            logger.info(l[1])
 
     @staticmethod
     def notify( event: str, additionalInformation: str):

@@ -1,7 +1,7 @@
 from devices.device import Device
 from devices.event_manager import EventManager
 from sensors.water_level_sensor import WaterLevelSensor
-
+import logging
 class RainBarrel(Device):
     __instance = None
      #Singleton
@@ -10,16 +10,18 @@ class RainBarrel(Device):
         if RainBarrel.__instance != None:
             raise Exception("This is a Singleton class")
         super().__init__("RainBarrel")
+        self.logger = logging.getLogger(__name__)
         self.enoughWater = True
         RainBarrel.__instance = self
 
     @staticmethod
     def getInstance():
+        logger = logging.getLogger(__name__)
         if RainBarrel.__instance == None:
-            print("Creating new RainBarrel instance")
+            logger.info("Creating new RainBarrel instance")
             RainBarrel()
         else:
-            print("Instance already existed: returning instance")
+            logger.info("Instance already existed: returning instance")
         return RainBarrel.__instance
     
     
@@ -38,11 +40,11 @@ class RainBarrel(Device):
         self.sensor.setRandomData()
         enoughWaterNew = self.decideEnoughWater()
         if enoughWaterNew:
-            print("RainBarrel is full - no Water Saving necessary" )
+            self.logger.info("RainBarrel is full - no Water Saving necessary" )
             if (not self.enoughWater == enoughWaterNew):
                 EventManager.notify("water", "Enough Water")
         else:
-            print("RainBarrel is almost empty - Water Saving necessary" )
+            self.logger.info("RainBarrel is almost empty - Water Saving necessary" )
             EventManager.notify("alarm", "RainBarrel is almost empty - Water Saving necessary")
             if (not self.enoughWater == enoughWaterNew):
                 EventManager.notify("water", "Not enough Water")
