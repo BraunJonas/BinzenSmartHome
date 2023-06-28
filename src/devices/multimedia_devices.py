@@ -30,7 +30,7 @@ class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner)
 
     def notify(self,event: str, additionalInformation: str):
         if(event == "alarm"):
-            self.logger.info("AudioDevice " + str(self.name) + "is reading Alarmmessage: "+ additionalInformation)
+            self.logger.info("AudioDevice " + str(self.name) + " is reading Alarmmessage: "+ additionalInformation)
 
     def setRunning(self, running: bool):
         self.running = running 
