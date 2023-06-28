@@ -9,14 +9,12 @@ class EventManager():
     @staticmethod
     def subscribe(listener: EventListerner, event: str):
         EventManager.__listeners.append([listener, event])
-        for l in EventManager.__listeners:
-            logger.info(l[1])
+    
 
     @staticmethod
     def unsubscribe(listener: EventListerner, event: str):
         EventManager.__listeners.remove([listener, event])
-        for l in EventManager.__listeners:
-            logger.info(l[1])
+        
 
     @staticmethod
     def notify( event: str, additionalInformation: str):
