@@ -16,11 +16,12 @@ class RainBarrel(Device):
 
     @staticmethod
     def getInstance():
+        logger = logging.getLogger(__name__)
         if RainBarrel.__instance == None:
-            print("Creating new RainBarrel instance")
+            logger.info("Creating new RainBarrel instance")
             RainBarrel()
         else:
-            print("Instance already existed: returning instance")
+            logger.info("Instance already existed: returning instance")
         return RainBarrel.__instance
     
     

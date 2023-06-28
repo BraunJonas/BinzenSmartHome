@@ -17,11 +17,12 @@ class FrostHeating(Device, SwitchOnOffable):
 
     @staticmethod
     def getInstance():
+        logger = logging.getLogger(__name__)
         if FrostHeating.__instance == None:
-            print("Creating new FrostHeatig instance")
+            logger.info("Creating new FrostHeatig instance")
             FrostHeating()
         else:
-            print("Instance already existed: returning instance")
+            logger.info("Instance already existed: returning instance")
         return FrostHeating.__instance
 
 
