@@ -1,36 +1,46 @@
 from .device import Device 
-from sensors.light_intensity_measurable import LightIntensityMeasurable
 from actors.switch_on_offable import SwitchOnOffable
-from actors.intensity_toggleable import IntensityToggleable
+from actors.percentage_adjustable import PercentageAdjustable
 
 # CCP - Light und IntensityLight sind geschlossen gegenüber der selben Art von Veränderungen und sind deshalb in einem Modul zusammengefasst
 
-class Light(Device, SwitchOnOffable, LightIntensityMeasurable):
+class Light(Device, SwitchOnOffable):
     def __init__(self, name: str):
         print("Light " + name + " has been created")
         super().__init__(name)
+        self.running = False
+
 
     def setRunning(self, running: bool):
-        super().setRunning(running)
+        self.running = running
         print("Light " + str(self.name) + "changed running to " + str(running))
 
-    def activateNightMode(self):
-        self.setRunning(False)
-        print("Light " + str(self.name) + "activated Night Mode")
+    def isRunning(self) -> bool:
+        return self.running
+    
+    def simuliereEinenThreadDurchlauf(self):
+        print(f"Light {self.name} is {'running' if self.running else 'not running'}" )
+
+    
 
 #LSP - Austauschbarkeit der Klassen: IntensityLight kann anstelle von Light verwendet werden, ohne die Funktionalität zu beeinträchtigen
 
-class IntensityLight(IntensityToggleable, Light):
+class IntensityLight(PercentageAdjustable, Light):
+    
     def __init__(self, name: str):
         print("IntensityLight " + name + " has been created")
         super().__init__(name)
+        self.insensity = 50
 
-    def activateNightMode(self):
-        super().activateNightMode()
-        self.setIntensity(5)
-        print("IntensityLight " + str(self.name) + " activated Night Mode")
+    def setPercentage(self, percentage: int):
+        self.insensity = percentage
+        print("IntensityLight " + self.name + " set to intensity: " + str(percentage))
 
-    def setIntensity(self, intensity):
-        super().setIntensity(intensity)
-        print("IntensityLight " + self.name + " set to intensity: " + str(intensity))
+    def getPercentage(self) -> bool:
+        return self.insensity
+    
+    def simuliereEinenThreadDurchlauf(self):
+        print(f"IntensityLight {self.name} is {'running' if self.running else 'not running'} with intensity {self.intesity}" )
+
+
 

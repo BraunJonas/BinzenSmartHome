@@ -1,11 +1,8 @@
-from .actor import Actor
 
-class SwitchOnOffable(Actor):
-    running = False
-        
+class SwitchOnOffable():        
     def setRunning(self, running:bool):
-        self.running = running 
+        raise NotImplementedError
 
     def isRunning(self) -> bool:
-        return self.running
+        raise NotImplementedError
 
