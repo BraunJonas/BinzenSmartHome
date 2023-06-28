@@ -29,5 +29,7 @@ class TemeratureDevice(Device, TemperatureAdjustable):
             #Verbesserungspotential -> Anpassung normalen Bereich an Target
             #Idee Alarme sollen nur unrealistische Temperaturen überprüfen -> "Funktionsweise des Geräts"
             EventManager.notify("alarm", f"TemperatureDevice {self.name} is measuring unusual Temperature- check if the sensor is broken or an unusual Targt is set.")
+            self.logger.warning(f"TemperatureDevice {self.name} is measuring unusual Temperature- check if the sensor is broken or an unusual Targt is set.")
+
         diff = self.checkDifferenceToTarget()
         self.logger.info(f"TemperatureDevice {self.name} is {'cooling' if diff<0 else 'heating'} Difference to Target: {diff}" )

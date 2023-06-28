@@ -44,7 +44,7 @@ class RainBarrel(Device):
             if (not self.enoughWater == enoughWaterNew):
                 EventManager.notify("water", "Enough Water")
         else:
-            self.logger.info("RainBarrel is almost empty - Water Saving necessary" )
+            self.logger.warning("RainBarrel is almost empty - Water Saving necessary" )
             EventManager.notify("alarm", "RainBarrel is almost empty - Water Saving necessary")
             if (not self.enoughWater == enoughWaterNew):
                 EventManager.notify("water", "Not enough Water")

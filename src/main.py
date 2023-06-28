@@ -66,6 +66,7 @@ if __name__ == "__main__":
     temp = TemeratureDevice("Temperaturdevice", tempsens)
 
     while(True):
+        logger.info(10*"-" + "NEW SIMULATION" + 75*"-")
         rainbarrel.simuliereEinenThreadDurchlauf()
         groundWater.simuliereEinenThreadDurchlauf()
         temp.simuliereEinenThreadDurchlauf()

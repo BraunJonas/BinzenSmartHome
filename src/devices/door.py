@@ -10,8 +10,6 @@ class Door(Device, OpenCloseable):
         self.logger.info("Door " + name + " has been created")
         self.open = False
         self.locked = False
-        
-        
 
     def setOpen(self, open: bool):
         self.open = open

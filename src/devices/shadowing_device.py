@@ -28,6 +28,7 @@ class ShadowingDevice(Device, LightSensor):
     def simuliereEinenThreadDurchlauf(self):
         self.sensor.setRandomData()
         if not self.sensor.checkEverythingNormal():
+            self.logger.warning(f"ShadowingDevice {self.name} is measuring unusual LightIntensity- check if the sensor is broken or an unusual Targt is set." )
             EventManager.notify("alarm", f"ShadowingDevice {self.name} is measuring unusual LightIntensity- check if the sensor is broken or an unusual Targt is set.")
         diff = self.checkDifferenceToTarget()
         self.logger.info(f"ShadowingDevice {self.name} is trying to {'decrease ' if diff<0 else 'increase'} lightintensity. Difference to Target: {diff}" )

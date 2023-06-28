@@ -26,6 +26,7 @@ class HumidityDevice(Device, HumiditySensor):
     def simuliereEinenThreadDurchlauf(self):
         self.sensor.setRandomData()
         if not self.sensor.checkEverythingNormal():
+            self.logger.warning(f"HumidityDevice {self.name} is measuring unusual Humidity- check if the sensor is broken or an unusual Targt is set.")
             EventManager.notify("alarm", f"HumidityDevice {self.name} is measuring unusual Humidity- check if the sensor is broken or an unusual Targt is set.")
         diff = self.checkDifferenceToTarget()
         self.logger.info(f"HumidityDevice {self.name} is trying to {'increase ' if diff<0 else 'decrease'} huidity. Difference to Target: {diff}" )
