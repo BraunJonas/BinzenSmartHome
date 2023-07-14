@@ -9,8 +9,10 @@ from sensors.temperature_sensor import TemperatureSensor
 from devices.temperature_device import TemeratureDevice
 from sensors.water_level_sensor import WaterLevelSensor
 from devices.door import Door
+from tests.test_door import TestDevice
 import logging
 import datetime
+
 
 
 # ADP - Es gibt keine Zyklen in der Abhängigkeitsstruktur des gesamten Codes
@@ -74,4 +76,5 @@ if __name__ == "__main__":
     #for room in rooms:
         #for device in room.getDevices():
             #device.simuliereEinenThreadDurchlauf()
+
 

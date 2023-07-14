@@ -37,22 +37,24 @@ class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner)
         self.logger.info("AudioDevice " + str(self.name) + " changed running to " + str(running))
 
     def getPercentage(self) -> int:
-        raise NotImplementedError
+        return self.volume
 
     def setPercentage(self, percentage: int):
         self.volume = percentage
-        self.logger.info("Audiodevice " + self.name + " set volume to : " + str(percentage))
+        self.logger.info("Audiodevice " + str(self.name) + " set volume to : " + str(percentage))
 
     def isRunning(self) -> bool:
-        return self.isRunning
+        return self.running
 
     def playAudio(self, audioData: str):
         if self.isRunning():
             self.media = audioData
             self.logger.info("AudioDevice " + str(self.name) + " is playing "+ self.media)
-
+        else:
+            self.logger.info(f"AudioDevice {self.name} is turned off")
+        
     def simuliereEinenThreadDurchlauf(self):
-        self.logger.info(f"MultimediaDevice {self.name} is {'running' if self.running else 'not running'} with volume {self.volume} and playing {self.media}" )
+        self.logger.info(f"MultimediaDevice {self.name} is {f'running with volume {self.volume} and playing {self.media}' if self.running else 'not running'}")
 
 #LSP - Austauschbarkeit der Klassen: Tv kann anstelle von AudioDevice verwendet werden, ohne die Funktionalität zu beeinträchtigen
 
@@ -65,4 +67,6 @@ class Tv(AudioDevice):
         if self.isRunning():
             self.media = videoData
             self.logger.info("VideoDevice " + str(self.name) + " is playing video")
+        else:
+            self.logger.info(f"VideoDevice {self.name} is turned off")
 

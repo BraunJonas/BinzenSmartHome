@@ -14,7 +14,7 @@ class LightSensor(Sensor):
             return False
     
     def setData(self, data):
-        if(data <= 100 & data >= 0):
+        if(data <= 100 and data >= 0):
             self.data = data
         else:
             self.data = 0

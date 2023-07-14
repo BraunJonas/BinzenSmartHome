@@ -13,7 +13,7 @@ class Door(Device, OpenCloseable):
 
     def setOpen(self, open: bool):
         self.open = open
-        self.logger.info("Door " + str(self.name) + " changed open to " + str(open))
+        self.logger.info(f"Door {self.name} is {'open' if self.open else 'closed'}")
 
     def isOpen(self) -> bool:
         return self.open   
@@ -25,8 +25,8 @@ class Door(Device, OpenCloseable):
         if(self.open and locked):
             self.logger.info(f"Door {self.name} couldn't be locked because it is open")
             return
-        self.locked = True
-        self.logger.info("Door " + str(self.name) + "changed locked to" + str(locked))
+        self.locked = locked
+        self.logger.info(f"Door {self.name} was {'locked' if self.locked else 'unlocked'}")
 
     def simuliereEinenThreadDurchlauf(self):
         self.logger.info(f"Door {self.name} is {'open' if self.open else 'closed'} and {'locked' if self.locked else 'unlocked'}" )

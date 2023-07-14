@@ -13,7 +13,7 @@ class TemperatureSensor(Sensor):
             return False
     
     def setData(self, data):
-        if(data >= -10 & data <= 55):
+        if(data >= -10 and data <= 55):
             self.data = data
         else:
             self.data = 0

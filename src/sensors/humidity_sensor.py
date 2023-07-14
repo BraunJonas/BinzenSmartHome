@@ -4,7 +4,7 @@ from .sensor import Sensor
 
 class HumiditySensor(Sensor):
 
-    def getData(self) -> number:
+    def getData(self) -> int:
         return self.data
     
     def checkEverythingNormal(self) -> bool:
@@ -13,8 +13,8 @@ class HumiditySensor(Sensor):
         else:
             return False
     
-    def setData(self, data):
-        if(data <= 100 & data >= 0):
+    def setData(self, data: int):
+        if(data <= 100 and data >= 0):
             self.data = data
         else:
             self.data = 0
