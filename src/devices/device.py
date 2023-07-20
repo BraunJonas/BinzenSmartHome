@@ -15,5 +15,8 @@ class Device():
     def setName(self, name:str):
         self.name = name
 
-    def simuliereEinenThreadDurchlauf():
+    def simuliereEinenThreadDurchlauf(self):
+        raise NotImplementedError
+    
+    def clone(self, name: str):
         raise NotImplementedError

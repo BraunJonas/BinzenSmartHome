@@ -1,6 +1,7 @@
 from random import randint
-from numpy import number
+
 from .sensor import Sensor
+
 
 class HumiditySensor(Sensor):
 

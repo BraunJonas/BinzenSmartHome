@@ -1,5 +1,7 @@
 from random import randint
+
 from .sensor import Sensor
+
 
 class TemperatureSensor(Sensor):
 

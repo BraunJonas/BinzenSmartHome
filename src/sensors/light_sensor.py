@@ -1,10 +1,11 @@
 from random import randint
-from numpy import number
+
 from .sensor import Sensor
+
 
 class LightSensor(Sensor):
 
-    def getData(self) -> number:
+    def getData(self) -> int:
         return self.data
     
     def checkEverythingNormal(self) -> bool:
