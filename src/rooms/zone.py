@@ -30,6 +30,10 @@ class Zone:
     def removeDevice(self, device: Device):
         self.devices.remove(device)
 
+    def simuliereEinenThreadDurchlauf(self):
+        for d in self.devices:
+            d.simuliereEinenThreadDurchlauf()
+
     def clone(self, name: str):
         clone = Zone(name)
         for d in self.devices:
