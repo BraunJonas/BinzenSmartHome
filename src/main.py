@@ -1,6 +1,7 @@
 import datetime
 import logging
 import time
+import src.communication_to_external_systems.weatherstation_adapter
 
 from src.communication_to_external_systems import ki_adapter
 from src.devices.standard_devices.frost_heating import FrostHeating
@@ -16,8 +17,6 @@ from src.rooms.zone import Zone
 def setupRooms():
     pass
     #Datei auslesen -> Räume erstellen
-
-   
 
 def setUpLogger():
     logging.basicConfig(filename="SmartHomeLog.log", encoding="utf-8", level=logging.DEBUG)
@@ -36,15 +35,19 @@ def checkInstance(a, str):
 
 
 if __name__ == "__main__":
+    print(src.communication_to_external_systems.weatherstation_adapter.getExpectedRainAmount())
+    print(src.communication_to_external_systems.weatherstation_adapter.getMinExpectedTemp())
+
 
     #setUpLogger()
     #setUpPrototypeZones()
     #z = ZonePrototypeRegister.getPrototype("normal")
-    setUpLogger()
-    z = GardenhouseZone("Zone 1")
-    z.addDevice(WateringDeviceDrops("z"))
-    for i in range(0,20):
-        z.askKI()
+    #setUpLogger()
+
+    # z = GardenhouseZone("Zone 1")
+    # z.addDevice(WateringDeviceDrops("z"))
+    # for i in range(0,20):
+    #     z.askKI()
     #while(True):
         #logger.info(10*"-" + "NEW SIMULATION" + 75*"-")
         

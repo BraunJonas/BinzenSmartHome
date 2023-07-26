@@ -1,10 +1,8 @@
 #Adapter Design Pattern -> Anpassung der Daten der externen Wetterstation an die benötigte Struktur
-#Da keine Wetterstation zur Verfügung steht wurde die Funktionalität hier ohne einen zugriff auf die Wetterstation simuliert.
-from random import randint
-
+import src.communication_to_external_systems.weatherstation
 
 def getMinExpectedTemp() -> int:
-    return randint(-10,30)
+    return src.communication_to_external_systems.weatherstation.getExpectedTemp()[0]
 
 def getExpectedRainAmount() -> int:
-    return randint(0,30)
+    return src.communication_to_external_systems.weatherstation.getExpectedRainAmount()

@@ -2,7 +2,6 @@ import logging
 import src.communication_to_external_systems.weatherstation_adapter
 from src.devices.device import Device
 from src.devices.device_communication.event_manager import EventManager
-from src.devices.sensor_devices.sensor_device import SensorDevice
 from src.sensors.water_level_sensor import WaterLevelSensor
 
 
