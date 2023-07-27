@@ -7,7 +7,7 @@ from src.sensors.humidity_sensor import HumiditySensor
 class HumidityDevice(SensorDevice):
     
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("HumidityDevice: " + name)
         self.logger = logging.getLogger(__name__)
         self.logger.info("HumidityDevice " + name + " has been created")
         self.sensor = HumiditySensor()

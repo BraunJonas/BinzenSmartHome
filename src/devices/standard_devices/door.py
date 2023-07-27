@@ -7,7 +7,7 @@ from src.devices.device import Device
 class Door(Device, OpenCloseable):
     
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("Door: " + name)
         self.logger = logging.getLogger(__name__)
         self.logger.info("Door " + name + " has been created")
         self.open = False

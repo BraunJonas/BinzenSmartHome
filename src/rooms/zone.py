@@ -37,6 +37,7 @@ class Zone:
     def clone(self, name: str):
         clone = Zone(name)
         for d in self.devices:
+
             clone.addDevice(d.clone("Device von Zone: " + name))
         return clone
 
@@ -65,62 +66,3 @@ class Zone:
             self.logger.warning("Zone "+ self.name + " has no Device with Type "+ str(type))
 
 
-        def switchOn(self, type):
-            if not issubclass(type, SwitchOnOffable):
-                self.logger.warning("Switch On was called for the wrong Type")
-                return
-            foundDevice = False
-            for d in self.devices:
-                if isinstance(d, type):
-                    d.setRunning(True)
-                    foundDevice = True
-            if not foundDevice:
-                self.logger.warning("Zone " + self.name + " has no Device with Type " + str(type))
-
-        def switchOff(self, type):
-            if not issubclass(type, SwitchOnOffable):
-                self.logger.warning("Switch Off was called for the wrong Type")
-                return
-            foundDevice = False
-            for d in self.devices:
-                if isinstance(d, type):
-                    d.setRunning(False)
-                    foundDevice = True
-            if not foundDevice:
-                self.logger.warning("Zone " + self.name + " has no Device with Type " + str(type))
-
-        def open(self, type):
-            if not issubclass(type, OpenCloseable):
-                self.logger.warning("Open was called for the wrong Type")
-                return
-            foundDevice = False
-            for d in self.devices:
-                if isinstance(d, type):
-                    d.setOpen(True)
-                    foundDevice = True
-            if not foundDevice:
-                self.logger.warning("Zone " + self.name + " has no Device with Type " + str(type))
-
-        def close(self, type):
-            if not issubclass(type, OpenCloseable):
-                self.logger.warning("Close was called for the wrong Type")
-                return
-            foundDevice = False
-            for d in self.devices:
-                if isinstance(d, type):
-                    d.setOpen(False)
-                    foundDevice = True
-            if not foundDevice:
-                self.logger.warning("Zone " + self.name + " has no Device with Type " + str(type))
-
-        def changeTemp(self, temp: int, type):
-            if not issubclass(type, TemperatureAdjustable):
-                self.logger.warning("Change Temperature was called for the wrong Type")
-                return
-            foundDevice = False
-            for d in self.devices:
-                if isinstance(d, type):
-                    d.setTemperature(d.getTemperature() + percentage)
-                    foundDevice = True
-            if not foundDevice:
-                self.logger.warning("Zone " + self.name + " has no Device with Type " + str(type))

@@ -10,7 +10,7 @@ from src.devices.device import Device
 class TemperatureDevice(SensorDevice, TemperatureAdjustable):
     
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("TemperatureDevice: " + name)
         self.logger = logging.getLogger(__name__)
         self.logger.info("TemeratureDevice " + name + " has been created")
         self.sensor = TemperatureSensor()
@@ -37,7 +37,7 @@ class TemperatureDevice(SensorDevice, TemperatureAdjustable):
         diff = self.checkDifferenceToTarget()
         self.logger.info(f"TemperatureDevice {self.name} is {'cooling' if diff<0 else 'heating'} Difference to Target: {diff}" )
 
-        def clone(self, name: str):
-            clone = TemperatureDevice(name)
-            clone.setTemperature(self.getTemperatur())
-            return clone
+    def clone(self, name: str):
+        clone = TemperatureDevice(name)
+        clone.setTemperature(self.getTemperature())
+        return clone

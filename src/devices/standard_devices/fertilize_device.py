@@ -6,7 +6,7 @@ from src.devices.device import Device
 
 class FertilizeDevice(Device, AmountAdjustable):
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("FertilizeDevice: " + name)
         self.logger = logging.getLogger(__name__)
         self.logger.info("FertilizeDevice " + name + " has been created")
         self.amount = 50

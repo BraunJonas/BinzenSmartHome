@@ -12,7 +12,7 @@ from src.devices.device import Device
 class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner):
     
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("TV: " + name)
         self.logger = logging.getLogger(__name__)
         self.logger.info("Audiodevice " + name + " has been created")
         self.volume = 0
@@ -69,7 +69,7 @@ class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner)
 
 class Tv(AudioDevice):
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("Tv: " + name)
         self.logger.info("TV " + name + " has been created")
 
     def playVideo(self, videoData: str):

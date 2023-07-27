@@ -9,7 +9,7 @@ from src.devices.device import Device
 
 class Light(Device, SwitchOnOffable):
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("Light: " + name)
         self.logger = logging.getLogger(__name__)
         self.logger.info("Light " + name + " has been created")
         self.running = False
@@ -36,7 +36,7 @@ class Light(Device, SwitchOnOffable):
 class IntensityLight(PercentageAdjustable, Light):
 
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("HumidityDevice: " + name)
         self.logger.info("IntensityLight " + name + " has been created")
         self.intesity = 50
 

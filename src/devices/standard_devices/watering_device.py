@@ -39,7 +39,7 @@ class WateringDevice(Device, AmountAdjustable, EventListerner):
 class WateringDeviceGround(WateringDevice, AmountAdjustable):
     def __init__(self, name: str):
         super().__init__(name)
-        self.logger.info("WateringDeviceGround " + name + " has been created")
+        self.logger.info("WateringDeviceDrops " + name + " has been created")
 
     def simuliereEinenThreadDurchlauf(self):
         amountUsed = self.strategy.execute(self.amount)
@@ -53,7 +53,7 @@ class WateringDeviceGround(WateringDevice, AmountAdjustable):
 
 class WateringDeviceDrops(WateringDevice, AmountAdjustable):
     def __init__(self, name: str):
-        super().__init__(name)
+        super().__init__("WateringDeviceDrops: " + name)
         self.logger.info("WateringDeviceDrops " + name + " has been created")
 
     def simuliereEinenThreadDurchlauf(self):
