@@ -18,8 +18,9 @@ class ShadowingDevice(SensorDevice, PercentageAdjustable):
 
 
     def setPercentage(self, lightintensity: int):
-        self.target = lightintensity
-        self.logger.info("ShadowingDevice " + str(self.name) + " set Target to " + str(lightintensity))
+        if(0 < lightintensity < 100):
+            self.target = lightintensity
+            self.logger.info("ShadowingDevice " + str(self.name) + " set Target to " + str(lightintensity))
 
     def getPercentage(self ):
         return self.target 

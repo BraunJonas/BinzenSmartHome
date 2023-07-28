@@ -14,8 +14,9 @@ class HumidityDevice(SensorDevice):
         self.target = 40
 
     def setPercentage(self, percentage: int):
-        self.target = percentage
-        self.logger.info("HumidityDevice " + str(self.name) + " set Target to " + str(percentage))
+        if(0 < percentage < 100):
+            self.target = percentage
+            self.logger.info("HumidityDevice " + str(self.name) + " set Target to " + str(percentage))
 
     def getPercentage(self ):
         return self.target 

@@ -17,8 +17,9 @@ class TemperatureDevice(SensorDevice, TemperatureAdjustable):
         self.target = 16
 
     def setTemperature(self, temp: int):
-        self.target = temp
-        self.logger.info("TemperatureDevice " + str(self.name) + " set Target to " + str(temp))
+        if(0 < temp < 50):
+            self.target = temp
+            self.logger.info("TemperatureDevice " + str(self.name) + " set Target to " + str(temp))
 
     def getTemperature(self) -> int:
         return self.target

@@ -17,8 +17,9 @@ class WateringDevice(Device, AmountAdjustable, EventListerner):
         EventManager.subscribe(self, "water")
 
     def setAmount(self, amount: float):
-        self.amount = amount
-        self.logger.info("WateringDevice " + str(self.name) + "changed amount to " + str(amount))
+        if amount>0:
+            self.amount = amount
+            self.logger.info("WateringDevice " + str(self.name) + "changed amount to " + str(amount))
 
     def getAmount(self) -> float:
         return self.amount
