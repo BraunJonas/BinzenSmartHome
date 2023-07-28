@@ -1,0 +1,763 @@
+INFO:root:----------2023-07-28 13:40:54.983797---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 30 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to False
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is not running
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 33.0l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 30l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel is full - no Water Saving necessary
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 9 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to False
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is not running
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 45.75l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 24l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel is full - no Water Saving necessary
+INFO:rooms.zone:Zone ZoneABC has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: ZoneABC has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Device von Zone: ZoneABC has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: ZoneABCchanged amount to 2
+INFO:rooms.zone:Device added to Zone ZoneABC
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Device von Zone: ZoneABC has been created
+INFO:devices.sensor_devices.temperature_device:TemperatureDevice TemperatureDevice: Device von Zone: ZoneABC set Target to 16
+INFO:rooms.zone:Device added to Zone ZoneABC
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice NEW_DEVICE has been created
+INFO:rooms.zone:Device added to Zone ZoneABC
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 2 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to True
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is running 
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 58.5l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 26l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel is full - no Water Saving necessary
+INFO:devices.standard_devices.watering_strategy:Watering Strategy normal used: watering 100%
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops WateringDeviceDrops: Device von Zone: ZoneABC is watering 2l per day
+INFO:devices.sensor_devices.temperature_device:TemperatureDevice TemperatureDevice: Device von Zone: ZoneABC is heating Difference to Target: 6
+WARNING:devices.sensor_devices.shadowing_device:ShadowingDevice ShadowingDevice: NEW_DEVICE is measuring unusual LightIntensity- check if the sensor is broken or an unusual Targt is set.
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice ShadowingDevice: NEW_DEVICE is trying to decrease  lightintensity. Difference to Target: -49
+INFO:root:----------2023-07-28 16:40:13.143306---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light HumidityDevice: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Tv: Name has been created
+INFO:devices.standard_devices.multimedia_devices:TV Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light HumidityDevice: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 2 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to True
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is running 
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 33.0l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 9l
+WARNING:devices.sensor_devices.rain_barrel_device:RainBarrel is almost empty - Water Saving necessary
+INFO:rooms.zone:Zone MyZone has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: MyZone has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Device von Zone: MyZone has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: MyZonechanged amount to 2
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Device von Zone: MyZone has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Device von Zone: MyZone has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Device von Zone: MyZonechanged amount to 2
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Device von Zone: MyZone has been created
+INFO:devices.sensor_devices.temperature_device:TemperatureDevice TemperatureDevice: Device von Zone: MyZone set Target to 16
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Device von Zone: MyZone has been created
+INFO:devices.sensor_devices.humidity_device:HumidityDevice HumidityDevice: Device von Zone: MyZone set Target to 40
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Device von Zone: MyZone has been created
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice ShadowingDevice: Device von Zone: MyZone set Target to 50
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Device von Zone: MyZone has been created
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice FertilizeDevice: Device von Zone: MyZone changed amount to 50
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.standard_devices.window:Window Device von Zone: MyZone has been created
+INFO:devices.standard_devices.window:Window Window: Device von Zone: MyZone changed open to False
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.standard_devices.lights:Light Device von Zone: MyZone has been created
+INFO:devices.standard_devices.lights:Light Light: Device von Zone: MyZonechanged running to False
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.standard_devices.lights:Light HumidityDevice: Device von Zone: MyZone has been created
+INFO:devices.standard_devices.lights:IntensityLight Device von Zone: MyZone has been created
+INFO:devices.standard_devices.lights:Light Light: HumidityDevice: Device von Zone: MyZonechanged running to False
+INFO:devices.standard_devices.lights:IntensityLight Light: HumidityDevice: Device von Zone: MyZone set to intensity: 50
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:devices.standard_devices.door:Door Device von Zone: MyZone has been created
+INFO:devices.standard_devices.door:Door Door: Device von Zone: MyZone was unlocked
+INFO:devices.standard_devices.door:Door Door: Device von Zone: MyZone is closed
+INFO:rooms.zone:Device added to Zone MyZone
+INFO:rooms.zone:Zone zuhause has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Tv: Device von Zone: zuhause has been created
+INFO:devices.standard_devices.multimedia_devices:TV Device von Zone: zuhause has been created
+INFO:devices.standard_devices.multimedia_devices:AudioDevice TV: Tv: Device von Zone: zuhause changed running to False
+INFO:devices.standard_devices.multimedia_devices:Audiodevice TV: Tv: Device von Zone: zuhause set volume to : 0
+INFO:rooms.zone:Device added to Zone zuhause
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Device von Zone: zuhause has been created
+INFO:devices.standard_devices.multimedia_devices:AudioDevice TV: Device von Zone: zuhause changed running to False
+INFO:devices.standard_devices.multimedia_devices:Audiodevice TV: Device von Zone: zuhause set volume to : 0
+INFO:rooms.zone:Device added to Zone zuhause
+INFO:devices.standard_devices.window:Window Device von Zone: zuhause has been created
+INFO:devices.standard_devices.window:Window Window: Device von Zone: zuhause changed open to False
+INFO:rooms.zone:Device added to Zone zuhause
+INFO:devices.standard_devices.lights:Light Device von Zone: zuhause has been created
+INFO:devices.standard_devices.lights:Light Light: Device von Zone: zuhausechanged running to False
+INFO:rooms.zone:Device added to Zone zuhause
+INFO:devices.standard_devices.lights:Light HumidityDevice: Device von Zone: zuhause has been created
+INFO:devices.standard_devices.lights:IntensityLight Device von Zone: zuhause has been created
+INFO:devices.standard_devices.lights:Light Light: HumidityDevice: Device von Zone: zuhausechanged running to False
+INFO:devices.standard_devices.lights:IntensityLight Light: HumidityDevice: Device von Zone: zuhause set to intensity: 50
+INFO:rooms.zone:Device added to Zone zuhause
+INFO:devices.standard_devices.door:Door Device von Zone: zuhause has been created
+INFO:devices.standard_devices.door:Door Door: Device von Zone: zuhause was unlocked
+INFO:devices.standard_devices.door:Door Door: Device von Zone: zuhause is closed
+INFO:rooms.zone:Device added to Zone zuhause
+INFO:devices.standard_devices.multimedia_devices:Audiodevice audiooo has been created
+INFO:rooms.zone:Device added to Zone zuhause
+INFO:root:----------2023-07-28 17:17:16.254636---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light HumidityDevice: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Tv: Name has been created
+INFO:devices.standard_devices.multimedia_devices:TV Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light HumidityDevice: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 0 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to True
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is running 
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 1.5l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 17l
+WARNING:devices.sensor_devices.rain_barrel_device:RainBarrel is almost empty - Water Saving necessary
+INFO:rooms.zone:Zone AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Tv: Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.multimedia_devices:TV Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.multimedia_devices:AudioDevice TV: Tv: Device von Zone: AAAAAAAAAAAAAAA changed running to False
+INFO:devices.standard_devices.multimedia_devices:Audiodevice TV: Tv: Device von Zone: AAAAAAAAAAAAAAA set volume to : 0
+INFO:rooms.zone:Device added to Zone AAAAAAAAAAAAAAA
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.multimedia_devices:AudioDevice TV: Device von Zone: AAAAAAAAAAAAAAA changed running to False
+INFO:devices.standard_devices.multimedia_devices:Audiodevice TV: Device von Zone: AAAAAAAAAAAAAAA set volume to : 0
+INFO:rooms.zone:Device added to Zone AAAAAAAAAAAAAAA
+INFO:devices.standard_devices.window:Window Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.window:Window Window: Device von Zone: AAAAAAAAAAAAAAA changed open to False
+INFO:rooms.zone:Device added to Zone AAAAAAAAAAAAAAA
+INFO:devices.standard_devices.lights:Light Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.lights:Light Light: Device von Zone: AAAAAAAAAAAAAAAchanged running to False
+INFO:rooms.zone:Device added to Zone AAAAAAAAAAAAAAA
+INFO:devices.standard_devices.lights:Light HumidityDevice: Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.lights:IntensityLight Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.lights:Light Light: HumidityDevice: Device von Zone: AAAAAAAAAAAAAAAchanged running to False
+INFO:devices.standard_devices.lights:IntensityLight Light: HumidityDevice: Device von Zone: AAAAAAAAAAAAAAA set to intensity: 50
+INFO:rooms.zone:Device added to Zone AAAAAAAAAAAAAAA
+INFO:devices.standard_devices.door:Door Device von Zone: AAAAAAAAAAAAAAA has been created
+INFO:devices.standard_devices.door:Door Door: Device von Zone: AAAAAAAAAAAAAAA was unlocked
+INFO:devices.standard_devices.door:Door Door: Device von Zone: AAAAAAAAAAAAAAA is closed
+INFO:rooms.zone:Device added to Zone AAAAAAAAAAAAAAA
+INFO:root:----------2023-07-28 17:34:39.906335---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice TV: Name has been created
+INFO:devices.standard_devices.multimedia_devices:TV Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 12 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to False
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is not running
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 26.25l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 18l
+WARNING:devices.sensor_devices.rain_barrel_device:RainBarrel is almost empty - Water Saving necessary
+INFO:rooms.zone:Zone mdlwqmdwaöc has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: mdlwqmdwaöcchanged amount to 2
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Device von Zone: mdlwqmdwaöcchanged amount to 2
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.sensor_devices.temperature_device:TemperatureDevice TemperatureDevice: Device von Zone: mdlwqmdwaöc set Target to 16
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.sensor_devices.humidity_device:HumidityDevice HumidityDevice: Device von Zone: mdlwqmdwaöc set Target to 40
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice ShadowingDevice: Device von Zone: mdlwqmdwaöc set Target to 50
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice FertilizeDevice: Device von Zone: mdlwqmdwaöc changed amount to 50
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.standard_devices.window:Window Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.window:Window Window: Device von Zone: mdlwqmdwaöc changed open to False
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.standard_devices.lights:Light Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.lights:Light Light: Device von Zone: mdlwqmdwaöcchanged running to False
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.standard_devices.lights:Light IntensityLight: Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.lights:IntensityLight Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.lights:Light Light: IntensityLight: Device von Zone: mdlwqmdwaöcchanged running to False
+INFO:devices.standard_devices.lights:IntensityLight Light: IntensityLight: Device von Zone: mdlwqmdwaöc set to intensity: 50
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:devices.standard_devices.door:Door Device von Zone: mdlwqmdwaöc has been created
+INFO:devices.standard_devices.door:Door Door: Device von Zone: mdlwqmdwaöc was unlocked
+INFO:devices.standard_devices.door:Door Door: Device von Zone: mdlwqmdwaöc is closed
+INFO:rooms.zone:Device added to Zone mdlwqmdwaöc
+INFO:root:----------2023-07-28 17:37:27.697399---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:root:----------2023-07-28 17:37:54.307615---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice TV: Name has been created
+INFO:devices.standard_devices.multimedia_devices:TV Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = -4 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to True
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is running 
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 0.75l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 2l
+WARNING:devices.sensor_devices.rain_barrel_device:RainBarrel is almost empty - Water Saving necessary
+INFO:root:----------2023-07-28 17:39:58.388525---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:root:----------2023-07-28 17:43:21.002702---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:root:----------2023-07-28 17:46:07.507179---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:root:----------2023-07-28 17:52:56.250291---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:root:----------2023-07-28 17:54:52.961350---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:root:----------2023-07-28 17:55:27.411673---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:root:----------2023-07-28 17:56:39.881521---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:root:----------2023-07-28 17:57:07.931217---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice TV: Name has been created
+INFO:devices.standard_devices.multimedia_devices:TV Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light IntensityLight: Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 4 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to True
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is running 
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 9.0l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 18l
+WARNING:devices.sensor_devices.rain_barrel_device:RainBarrel is almost empty - Water Saving necessary
+INFO:root:----------2023-07-28 17:59:03.276650---------------------------------------------------------------------------
+INFO:rooms.zone:Zone TropicalPrototype has been created
+INFO:rooms.zone:Gardenhousezone TropicalPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone TropicalPrototype
+INFO:rooms.zone:Zone CompleteGardenPrototype has been created
+INFO:rooms.zone:Gardenhousezone CompleteGardenPrototype has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Name has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.lights:Light (IntensityLight): Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteGardenPrototype
+INFO:rooms.zone:Zone CompleteHomePrototype has been created
+INFO:devices.standard_devices.multimedia_devices:Audiodevice (TV): Name has been created
+INFO:devices.standard_devices.multimedia_devices:TV Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.multimedia_devices:Audiodevice Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.window:Window Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.lights:Light (IntensityLight): Name has been created
+INFO:devices.standard_devices.lights:IntensityLight Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.door:Door Name has been created
+INFO:rooms.zone:Device added to Zone CompleteHomePrototype
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating got Info: Expected Temperature = 13 degree
+INFO:devices.standard_devices.frost_heating:FrostHeating set running to False
+INFO:devices.standard_devices.frost_heating:FrostHeating Frostheating is not running
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel= 17.25l
+INFO:devices.sensor_devices.rain_barrel_device:RainBarrel RainBarrel got Info: Expected RainAmount = 12l
+WARNING:devices.sensor_devices.rain_barrel_device:RainBarrel is almost empty - Water Saving necessary
+INFO:rooms.zone:Zone iufoieam has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceDrops Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceDrops: Device von Zone: iufoieamchanged amount to 2
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.watering_device:WateringDeviceGround Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.watering_device:WateringDevice WateringDeviceGround: Device von Zone: iufoieamchanged amount to 2
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.sensor_devices.temperature_device:TemeratureDevice Device von Zone: iufoieam has been created
+INFO:devices.sensor_devices.temperature_device:TemperatureDevice TemperatureDevice: Device von Zone: iufoieam set Target to 16
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.sensor_devices.humidity_device:HumidityDevice Device von Zone: iufoieam has been created
+INFO:devices.sensor_devices.humidity_device:HumidityDevice HumidityDevice: Device von Zone: iufoieam set Target to 40
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice Device von Zone: iufoieam has been created
+INFO:devices.sensor_devices.shadowing_device:ShadowingDevice ShadowingDevice: Device von Zone: iufoieam set Target to 50
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.fertilize_device:FertilizeDevice FertilizeDevice: Device von Zone: iufoieam changed amount to 50
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.standard_devices.window:Window Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.window:Window Window: Device von Zone: iufoieam changed open to False
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.standard_devices.lights:Light Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.lights:Light Light: Device von Zone: iufoieamchanged running to False
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.standard_devices.lights:Light (IntensityLight): Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.lights:IntensityLight Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.lights:Light Light: (IntensityLight): Device von Zone: iufoieamchanged running to False
+INFO:devices.standard_devices.lights:IntensityLight Light: (IntensityLight): Device von Zone: iufoieam set to intensity: 50
+INFO:rooms.zone:Device added to Zone iufoieam
+INFO:devices.standard_devices.door:Door Device von Zone: iufoieam has been created
+INFO:devices.standard_devices.door:Door Door: Device von Zone: iufoieam was unlocked
+INFO:devices.standard_devices.door:Door Door: Device von Zone: iufoieam is closed
+INFO:rooms.zone:Device added to Zone iufoieam

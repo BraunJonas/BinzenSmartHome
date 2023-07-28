@@ -1,12 +1,11 @@
 import logging
 
-from src import devices
-from src.actors.amount_adjustable import AmountAdjustable
-from src.actors.open_closeable import OpenCloseable
-from src.actors.percentage_adjustable import PercentageAdjustable
-from src.actors.switch_on_offable import SwitchOnOffable
-from src.actors.temperature_adjustable import TemperatureAdjustable
-from src.devices.device import Device
+from actors.amount_adjustable import AmountAdjustable
+from actors.open_closeable import OpenCloseable
+from actors.percentage_adjustable import PercentageAdjustable
+from actors.switch_on_offable import SwitchOnOffable
+from actors.temperature_adjustable import TemperatureAdjustable
+from devices.device import Device
 
 
 class Zone:

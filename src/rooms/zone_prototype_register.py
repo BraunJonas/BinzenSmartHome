@@ -1,6 +1,6 @@
 from typing import Dict, Any
 
-from src.rooms.zone import Zone
+from rooms.zone import Zone
 
 class ZonePrototypeRegister():
         ## SRP -> PrototypeRegister hat nur die Aufgabe Prototypes zu verwalten -> Getrennt von der Klasse Gardenhousezone

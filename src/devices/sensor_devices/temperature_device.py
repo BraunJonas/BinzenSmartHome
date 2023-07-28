@@ -1,11 +1,8 @@
 import logging
-from src.actors.temperature_adjustable import TemperatureAdjustable
-from src.devices.device_communication.event_manager import EventManager
-from src.devices.sensor_devices.sensor_device import SensorDevice
-from src.sensors.temperature_sensor import TemperatureSensor
-
-from src.devices.device import Device
-
+from actors.temperature_adjustable import TemperatureAdjustable
+from devices.device_communication.event_manager import EventManager
+from devices.sensor_devices.sensor_device import SensorDevice
+from sensors.temperature_sensor import TemperatureSensor
 
 class TemperatureDevice(SensorDevice, TemperatureAdjustable):
     

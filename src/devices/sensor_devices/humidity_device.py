@@ -1,8 +1,7 @@
 import logging
-from src.devices.device_communication.event_manager import EventManager
-from src.devices.sensor_devices.sensor_device import SensorDevice
-from src.sensors.humidity_sensor import HumiditySensor
-
+from devices.device_communication.event_manager import EventManager
+from devices.sensor_devices.sensor_device import SensorDevice
+from sensors.humidity_sensor import HumiditySensor
 
 class HumidityDevice(SensorDevice):
     

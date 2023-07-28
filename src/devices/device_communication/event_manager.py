@@ -1,5 +1,5 @@
 import logging
-from src.devices.device_communication.event_listener import EventListerner
+from devices.device_communication.event_listener import EventListerner
 
 logger = logging.getLogger(__name__)
 

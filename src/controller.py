@@ -1,33 +1,67 @@
 from rooms.gardenhouse_zone import GardenhouseZone
-from src.actors.percentage_adjustable import PercentageAdjustable
-from src.actors.temperature_adjustable import TemperatureAdjustable
-from src.actors.amount_adjustable import AmountAdjustable
-from src.actors.open_closeable import OpenCloseable
-from src.actors.switch_on_offable import SwitchOnOffable
+from actors.percentage_adjustable import PercentageAdjustable
+from actors.temperature_adjustable import TemperatureAdjustable
+from actors.amount_adjustable import AmountAdjustable
+from actors.open_closeable import OpenCloseable
+from actors.switch_on_offable import SwitchOnOffable
 
-from src.devices.sensor_devices.humidity_device import HumidityDevice
-from src.devices.sensor_devices.shadowing_device import ShadowingDevice
-from src.devices.standard_devices.door import Door
-from src.devices.standard_devices.multimedia_devices import AudioDevice, Tv
-from src.rooms.zone_prototype_register import ZonePrototypeRegister
-from src.devices.sensor_devices.rain_barrel_device import RainBarrel
-from src.devices.sensor_devices.temperature_device import TemperatureDevice
-from src.devices.standard_devices.frost_heating import FrostHeating
-from src.devices.standard_devices.watering_device import WateringDeviceDrops
-from src.rooms.zone import Zone
+from devices.standard_devices.window import Window
+from devices.standard_devices.lights import Light, IntensityLight
+from devices.standard_devices.fertilize_device import FertilizeDevice
+from devices.sensor_devices.humidity_device import HumidityDevice
+from devices.sensor_devices.shadowing_device import ShadowingDevice
+from devices.standard_devices.door import Door
+from devices.standard_devices.multimedia_devices import AudioDevice, Tv
+from rooms.zone_prototype_register import ZonePrototypeRegister
+from devices.sensor_devices.rain_barrel_device import RainBarrel
+from devices.sensor_devices.temperature_device import TemperatureDevice
+from devices.standard_devices.frost_heating import FrostHeating
+from devices.standard_devices.watering_device import WateringDeviceGround, WateringDeviceDrops
+from rooms.zone import Zone
 
 class Controller():
     __zones = []
     __rainbarrel = RainBarrel.getInstance()
     __frostheating = FrostHeating.getInstance()
-    #Alle Devices außer RainBarrel und Frostheating hinzufügen (aufpassen in Lights/ Audio File sind mehrere Devices) -> SensorDevice und Device sind abstrakt!
-    __deviceOptions = ["TemperatureDevice", "HumidityDevice", "ShadowingDevice", "Tv", "Door"]
+    #Alle Devices außer RainBarrel und Frostheating hinzufügen (RainBarrel und Frostheating sind zonenübergreifend)
+    __deviceOptions = ["TemperatureDevice", "HumidityDevice", "ShadowingDevice", "Tv", "Door","FertilizeDevice", "AudioDevice", "Light", "IntensityLight", "WateringDeviceDrops", "WateringDeviceGround", "Window"]
     @staticmethod
     def setUpPrototypeZones():
+
+        z = GardenhouseZone("CompleteGardenPrototype")
+        z.addDevice(WateringDeviceDrops("Name"))
+        z.addDevice(WateringDeviceGround("Name"))
+        z.addDevice(TemperatureDevice("Name"))
+        z.addDevice(HumidityDevice("Name"))
+        z.addDevice(ShadowingDevice("Name"))
+        z.addDevice(FertilizeDevice("Name"))
+        z.addDevice(Window("Name"))
+        z.addDevice(Light("Name"))
+        z.addDevice(IntensityLight("Name"))
+        z.addDevice(Door("Name"))
+        ZonePrototypeRegister.addPrototype(z, z.getName())
+
+        z = Zone("CompleteHomePrototype")
+        z.addDevice(Tv("Name"))
+        z.addDevice(AudioDevice("Name"))
+        z.addDevice(Window("Name"))
+        z.addDevice(Light("Name"))
+        z.addDevice(IntensityLight("Name"))
+        z.addDevice(Door("Name"))
+        ZonePrototypeRegister.addPrototype(z, z.getName())
+
         z = GardenhouseZone("TropicalPrototype")
         z.addDevice(WateringDeviceDrops("Name"))
         z.addDevice(TemperatureDevice("Name"))
+        z.addDevice(HumidityDevice("Name"))
         ZonePrototypeRegister.addPrototype(z, z.getName())
+
+        z = Zone("GamingPrototype")
+        z.addDevice(Tv("Name"))
+        z.addDevice(AudioDevice("Name"))
+        z.addDevice(IntensityLight("Name"))
+        ZonePrototypeRegister.addPrototype(z, z.getName())
+
 
     @staticmethod
     def setUp():
@@ -70,6 +104,20 @@ class Controller():
                 Controller.__zones[zone].addDevice(Tv(name))
             case "Door":
                 Controller.__zones[zone].addDevice(Door(name))
+            case "FertilizeDevice":
+                Controller.__zones[zone].addDevice(FertilizeDevice(name))
+            case "AudioDevice":
+                Controller.__zones[zone].addDevice(AudioDevice(name))
+            case "Light":
+                Controller.__zones[zone].addDevice(Light(name))
+            case "IntensityLight":
+                Controller.__zones[zone].addDevice(IntensityLight(name))
+            case "WateringDeviceDrops":
+                Controller.__zones[zone].addDevice(WateringDeviceDrops(name))
+            case "WateringDeviceGround":
+                Controller.__zones[zone].addDevice(WateringDeviceGround(name))
+            case "Window":
+                Controller.__zones[zone].addDevice(Window(name))
 
     @staticmethod
     def getChangeOptions(zone: int, device: int):
