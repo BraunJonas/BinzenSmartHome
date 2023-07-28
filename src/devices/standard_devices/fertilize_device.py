@@ -1,7 +1,6 @@
 import logging
-from src.actors.amount_adjustable import AmountAdjustable
-
-from src.devices.device import Device
+from actors.amount_adjustable import AmountAdjustable
+from devices.device import Device
 
 
 class FertilizeDevice(Device, AmountAdjustable):

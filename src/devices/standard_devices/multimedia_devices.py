@@ -1,10 +1,9 @@
 import logging
-from src.actors.percentage_adjustable import PercentageAdjustable
-from src.actors.switch_on_offable import SwitchOnOffable
-from src.devices.device_communication.event_listener import EventListerner
-from src.devices.device_communication.event_manager import EventManager
-
-from src.devices.device import Device
+from actors.percentage_adjustable import PercentageAdjustable
+from actors.switch_on_offable import SwitchOnOffable
+from devices.device_communication.event_listener import EventListerner
+from devices.device_communication.event_manager import EventManager
+from devices.device import Device
 
 
 # CCP - AudioDevice und Tv sind geschlossen gegenüber der selben Art von Veränderungen und sind deshalb in einem Modul zusammengefasst
@@ -12,7 +11,7 @@ from src.devices.device import Device
 class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner):
     
     def __init__(self, name: str):
-        super().__init__("TV: " + name)
+        super().__init__("AudioDevice: " + name)
         self.logger = logging.getLogger(__name__)
         self.logger.info("Audiodevice " + name + " has been created")
         self.volume = 0
@@ -69,15 +68,15 @@ class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner)
 
 class Tv(AudioDevice):
     def __init__(self, name: str):
-        super().__init__("Tv: " + name)
+        super().__init__("(TV): " + name)
         self.logger.info("TV " + name + " has been created")
 
     def playVideo(self, videoData: str):
         if self.isRunning():
             self.media = videoData
-            self.logger.info("VideoDevice " + str(self.name) + " is playing video")
+            self.logger.info("TV " + str(self.name) + " is playing video")
         else:
-            self.logger.info(f"VideoDevice {self.name} is turned off")
+            self.logger.info(f"TV {self.name} is turned off")
 
     def clone(self, name: str):
         clone = Tv(name)

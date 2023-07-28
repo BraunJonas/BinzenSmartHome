@@ -1,8 +1,7 @@
 import logging
-from src.actors.percentage_adjustable import PercentageAdjustable
-from src.actors.switch_on_offable import SwitchOnOffable
-
-from src.devices.device import Device
+from actors.percentage_adjustable import PercentageAdjustable
+from actors.switch_on_offable import SwitchOnOffable
+from devices.device import Device
 
 
 # CCP - Light und IntensityLight sind geschlossen gegenüber der selben Art von Veränderungen und sind deshalb in einem Modul zusammengefasst
@@ -36,7 +35,7 @@ class Light(Device, SwitchOnOffable):
 class IntensityLight(PercentageAdjustable, Light):
 
     def __init__(self, name: str):
-        super().__init__("HumidityDevice: " + name)
+        super().__init__("(IntensityLight): " + name)
         self.logger.info("IntensityLight " + name + " has been created")
         self.intesity = 50
 

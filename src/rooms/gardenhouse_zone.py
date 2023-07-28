@@ -1,11 +1,11 @@
-from src.devices.standard_devices.fertilize_device import FertilizeDevice
-from src.devices.sensor_devices.humidity_device import HumidityDevice
-from src.devices.standard_devices.lights import IntensityLight
-from src.devices.sensor_devices.shadowing_device import ShadowingDevice
-from src.devices.sensor_devices.temperature_device import TemperatureDevice
-from src.devices.standard_devices.watering_device import WateringDeviceDrops, WateringDeviceGround, WateringDevice
-from src.communication_to_external_systems.ki_adapter import getPflegeHinweis, KIError
-from src.rooms.zone import Zone
+from devices.standard_devices.fertilize_device import FertilizeDevice
+from devices.sensor_devices.humidity_device import HumidityDevice
+from devices.standard_devices.lights import IntensityLight
+from devices.sensor_devices.shadowing_device import ShadowingDevice
+from devices.sensor_devices.temperature_device import TemperatureDevice
+from devices.standard_devices.watering_device import WateringDeviceDrops, WateringDeviceGround, WateringDevice
+from communication_to_external_systems.ki_adapter import getPflegeHinweis, KIError
+from rooms.zone import Zone
 
 
 class GardenhouseZone (Zone):

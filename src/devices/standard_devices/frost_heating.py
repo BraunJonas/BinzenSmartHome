@@ -1,7 +1,7 @@
 import logging
-import src.communication_to_external_systems.weatherstation_adapter
-from src.actors.switch_on_offable import SwitchOnOffable
-from src.devices.device import Device
+import communication_to_external_systems.weatherstation_adapter
+from actors.switch_on_offable import SwitchOnOffable
+from devices.device import Device
 
 
 class FrostHeating(Device, SwitchOnOffable):
@@ -36,7 +36,7 @@ class FrostHeating(Device, SwitchOnOffable):
     
     def decideRunning(self) -> bool:
         #Ask Weather station to decide wether FrostHeating is necessary
-        expectedTemp = src.communication_to_external_systems.weatherstation_adapter.getMinExpectedTemp()
+        expectedTemp = communication_to_external_systems.weatherstation_adapter.getMinExpectedTemp()
         self.logger.info(f"FrostHeating {self.name} got Info: Expected Temperature = {expectedTemp} degree"  )
         if(expectedTemp < 5):
             return True

@@ -1,8 +1,8 @@
 import logging
-import src.communication_to_external_systems.weatherstation_adapter
-from src.devices.device import Device
-from src.devices.device_communication.event_manager import EventManager
-from src.sensors.water_level_sensor import WaterLevelSensor
+import communication_to_external_systems.weatherstation_adapter
+from devices.device import Device
+from devices.device_communication.event_manager import EventManager
+from sensors.water_level_sensor import WaterLevelSensor
 
 
 class RainBarrel(Device):
@@ -39,7 +39,7 @@ class RainBarrel(Device):
             #return True
         #else:
         amount = self.sensor.getData() * self.maxAmount /100
-        expected = src.communication_to_external_systems.weatherstation_adapter.getExpectedRainAmount()
+        expected = communication_to_external_systems.weatherstation_adapter.getExpectedRainAmount()
         self.logger.info(f"RainBarrel {self.name}= {amount}l"  )
 
         self.logger.info(f"RainBarrel {self.name} got Info: Expected RainAmount = {expected}l"  )

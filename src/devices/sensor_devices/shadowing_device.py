@@ -1,11 +1,8 @@
 import logging
-from src.actors.percentage_adjustable import PercentageAdjustable
-from src.devices.device_communication.event_manager import EventManager
-from src.devices.sensor_devices.sensor_device import SensorDevice
-from src.sensors.light_sensor import LightSensor
-
-from src.devices.device import Device
-
+from actors.percentage_adjustable import PercentageAdjustable
+from devices.device_communication.event_manager import EventManager
+from devices.sensor_devices.sensor_device import SensorDevice
+from sensors.light_sensor import LightSensor
 
 class ShadowingDevice(SensorDevice, PercentageAdjustable):
     

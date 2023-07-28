@@ -1,10 +1,9 @@
 import logging
-from src.actors.amount_adjustable import AmountAdjustable
-from src.devices.device_communication.event_listener import EventListerner
-from src.devices.device_communication.event_manager import EventManager
-from src.devices.standard_devices.watering_strategy import WateringStrategy, WateringStrategyNormal, WateringStrategySaveUp
-
-from src.devices.device import Device
+from actors.amount_adjustable import AmountAdjustable
+from devices.device_communication.event_listener import EventListerner
+from devices.device_communication.event_manager import EventManager
+from devices.standard_devices.watering_strategy import WateringStrategy, WateringStrategyNormal, WateringStrategySaveUp
+from devices.device import Device
 
 
 class WateringDevice(Device, AmountAdjustable, EventListerner):
@@ -39,8 +38,8 @@ class WateringDevice(Device, AmountAdjustable, EventListerner):
     
 class WateringDeviceGround(WateringDevice, AmountAdjustable):
     def __init__(self, name: str):
-        super().__init__(name)
-        self.logger.info("WateringDeviceDrops " + name + " has been created")
+        super().__init__("WateringDeviceGround: " + name)
+        self.logger.info("WateringDeviceGround " + name + " has been created")
 
     def simuliereEinenThreadDurchlauf(self):
         amountUsed = self.strategy.execute(self.amount)

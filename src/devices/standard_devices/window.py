@@ -1,7 +1,6 @@
 import logging
-from src.actors.open_closeable import OpenCloseable
-
-from src.devices.device import Device
+from actors.open_closeable import OpenCloseable
+from devices.device import Device
 
 
 class Window(Device, OpenCloseable):

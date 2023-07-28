@@ -1,9 +1,10 @@
+from typing import List
 import datetime
 import logging
-from src.controller import Controller
-from src.rooms.gardenhouse_zone import GardenhouseZone
-from src.rooms.zone import Zone
-from src.rooms.zone_prototype_register import ZonePrototypeRegister
+from controller import Controller
+from rooms.gardenhouse_zone import GardenhouseZone
+from rooms.zone import Zone
+from rooms.zone_prototype_register import ZonePrototypeRegister
 
 
 # ADP - Es gibt keine Zyklen in der Abhängigkeitsstruktur des gesamten Codes
@@ -28,7 +29,7 @@ def ask_yesno(question):
         else:
             print("Bitte antworte mit ja oder nein.")
 
-def showMenu(title: str, options: []):
+def showMenu(title: str, options: List[str]):
     while (True):
         print(title)
         ctr = 1
@@ -99,7 +100,7 @@ def changePercentage(zone, device):
         except ValueError:
             pass
         print("Gib einen gültigen Wert ein")
-    print("Changed Percentage - Change can be seen in Logfile")
+    print("Prozentangabe verändert - Änderung kann im Logfile eingesehen werden")
 
 
 def changeTemp(zone, device):
@@ -116,7 +117,7 @@ def changeTemp(zone, device):
         except ValueError:
             pass
         print("Gib einn gültigen Wert ein")
-    print("Changed Temp - Change can be seen in Logfile")
+    print("Temperatur verändert - Änderung kann im Logfile eingesehen werden")
 
 
 
@@ -134,7 +135,7 @@ def changeAmount(zone, device):
         except ValueError:
             pass
         print("Gib einn gültigen Wert ein")
-    print("Changed Amount - Change can be seen in Logfile")
+    print("Menge verändert - Änderung kann im Logfile eingesehen werden")
 
 
 
@@ -144,7 +145,7 @@ def changeAudio(zone, device):
     if (eingabe == "q"):
         print("Menu wird verlassen")
     Controller.changeAudio(zone, device, eingabe)
-    print("Changed Audio - Change can be seen in Logfile")
+    print("Audio verändert - Änderung kann im Logfile eingesehen werden")
 
 
 def changeVideo(zone, device):
@@ -153,7 +154,7 @@ def changeVideo(zone, device):
     if eingabe == "q":
         print("Menu wird verlassen")
     Controller.changeVideo(zone, device, eingabe)
-    print("Changed Video - Change can be seen in Logfile")
+    print("Video verändert - Änderung kann im Logfile eingesehen werden")
 
 
 def changeName(zone, device):

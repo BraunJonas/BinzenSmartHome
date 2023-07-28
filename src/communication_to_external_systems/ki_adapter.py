@@ -1,4 +1,4 @@
-from src.communication_to_external_systems.floraGPT import ermittlePflegehinweis
+from communication_to_external_systems.floraGPT import ermittlePflegehinweis
 
 def getPflegeHinweis(bild: str) -> str:
     hinweis = ermittlePflegehinweis(bild)
