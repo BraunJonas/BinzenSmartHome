@@ -13,6 +13,7 @@ class TestAudioDevice(unittest.TestCase):
         self.assertEqual(self.audioDevice.getPercentage(), 30)
     
     def test_setPercentage(self):
+        # expected log message after running method:
         self.logMessage = f"AudioDevice {self.audioDevice.name} set volume to : 60"
         with self.assertLogs() as log:
             self.audioDevice.setPercentage(60)
@@ -22,6 +23,7 @@ class TestAudioDevice(unittest.TestCase):
         self.assertEqual(self.audioDevice.getPercentage(), 60)
 
     def test_setRunning(self):
+        # expected log message after running method:
         self.logMessage = f"AudioDevice {self.audioDevice.name} changed running to True"
         with self.assertLogs() as log:
             self.audioDevice.setRunning(True)
@@ -42,17 +44,20 @@ class TestAudioDevice(unittest.TestCase):
     
     def test_playAudio_exception(self):
         self.audioDevice.setRunning(False)
+        # expected log message after running method:
         self.logMessage = f"AudioDevice {self.audioDevice.name} is turned off"
         with self.assertLogs() as log:
             self.audioDevice.playAudio("Song")
-        #checks if only one message gets logged
+        # checks if only one message gets logged 
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
 
+     
     def test_simuliereEinenThreadDurchlauf_running(self):
         self.audioDevice.setRunning(True)
         self.audioDevice.setPercentage(80)
         self.audioDevice.media = "Song"
+        # expected log message after running method:
         self.logMessage = f"MultimediaDevice {self.audioDevice.name} is running with volume {self.audioDevice.volume} and playing {self.audioDevice.media}"
         with self.assertLogs() as log:
             self.audioDevice.simuliereEinenThreadDurchlauf()
@@ -62,6 +67,7 @@ class TestAudioDevice(unittest.TestCase):
     
     def test_simuliereEinenThreadDurchlauf_notRunning(self):
         self.audioDevice.setRunning(False)
+        # expected log message after running method:
         self.logMessage = f"MultimediaDevice {self.audioDevice.name} is not running"
         with self.assertLogs() as log:
             self.audioDevice.simuliereEinenThreadDurchlauf()

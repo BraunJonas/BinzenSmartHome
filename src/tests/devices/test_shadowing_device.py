@@ -11,16 +11,19 @@ class TestShadowingDevice(unittest.TestCase):
         self.assertEqual(self.shadowingDevice.getPercentage(), 40)
     
     def test_setpercentage(self):
+        # expected log message after running method:
         self.logMessage = f"ShadowingDevice {self.shadowingDevice.name} set Target to 80"
         with self.assertLogs() as log:
             self.shadowingDevice.setPercentage(80)
-        #checks if only one message gets logged
+        # checks if only one message gets logged
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
         self.assertEqual(self.shadowingDevice.getPercentage(), 80)
    
+    # test for clone method
     def test_clone(self):
         self.shadowingDevice.setPercentage(70)
         cloneDevice = self.shadowingDevice.clone("Schattenmacher")
+        # check if content from both objects are the same:
         self.assertEqual(cloneDevice.getPercentage(), self.shadowingDevice.getPercentage())
         self.assertEqual(cloneDevice.name, self.shadowingDevice.name)

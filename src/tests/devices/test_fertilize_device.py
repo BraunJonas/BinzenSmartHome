@@ -17,9 +17,11 @@ class TestFertilizeDevice(unittest.TestCase):
 
     def test_simuliereEinenThreadDurchlauf(self):
         self.fertilizeDevice.setAmount(10.05)
+        # expected log message after running method:
         self.logMessage = f"FertilizeDevice {self.fertilizeDevice.name} is fertilizing " + str(10.05) + "g per day"
         with self.assertLogs() as log:
             self.fertilizeDevice.simuliereEinenThreadDurchlauf()
+        # checks if only one message gets logged 
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
 

@@ -24,34 +24,42 @@ class TestDevice(unittest.TestCase):
 
     def test_setLocked_locked(self):
         self.door.setOpen(False)
+        # expected log message after running method:
         self.logMessage = f"Door {self.door.name} was locked"
         with self.assertLogs() as log:
             self.door.setLocked(True)
+        # checks if only one message gets logged 
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
 
     def test_setLocked_unlocked(self):
         self.door.setOpen(False)
+        # expected log message after running method:
         self.logMessage = f"Door {self.door.name} was unlocked"
         with self.assertLogs() as log:
             self.door.setLocked(False)
+        # checks if only one message gets logged 
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
 
     def test_setLocked_doorOpen(self):
         self.door.setOpen(True)
+        # expected log message after running method:
         self.logMessage = f"Door {self.door.name} couldn't be locked because it is open"
         with self.assertLogs() as log:
             self.door.setLocked(True)
+        # checks if only one message gets logged 
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
 
     def test_simuliereEinenThreadDurchlauf(self):
         self.door.setOpen(False)
         self.door.setLocked(True)
+        # expected log message after running method:
         self.logMessage = f"Door {self.door.name} is closed and locked"
         with self.assertLogs() as log:
             self.door.simuliereEinenThreadDurchlauf()
+        # checks if only one message gets logged 
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
     

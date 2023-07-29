@@ -20,5 +20,6 @@ class TestHumidityDevice(unittest.TestCase):
     def test_clone(self):
         self.humidityDevice.setPercentage(59)
         cloneDevice = self.humidityDevice.clone("Heißmacher")
+        # check if content from both objects are the same:
         self.assertEqual(cloneDevice.getPercentage(), self.humidityDevice.getPercentage())
         self.assertEqual(cloneDevice.name, self.humidityDevice.name)
