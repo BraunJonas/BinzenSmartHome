@@ -1,5 +1,5 @@
 import unittest
-from devices.frost_heating import FrostHeating
+from devices.standard_devices.frost_heating import FrostHeating
 
 
 class TestFrostHeating():

@@ -1,6 +1,6 @@
 import unittest
+from random import Random
 from sensors.humidity_sensor import HumiditySensor
-
 
 class TestHumiditySensor(unittest.TestCase):
 
@@ -34,5 +34,6 @@ class TestHumiditySensor(unittest.TestCase):
     def test_setdata_below_0(self):
         self.humiditySensor.setData(-5)
         self.assertEqual(self.humiditySensor.getData(), 0)
+
 
         

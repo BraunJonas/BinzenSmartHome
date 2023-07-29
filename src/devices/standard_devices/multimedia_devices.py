@@ -1,14 +1,14 @@
 import logging
 from actors.percentage_adjustable import PercentageAdjustable
 from actors.switch_on_offable import SwitchOnOffable
-from devices.device_communication.event_listener import EventListerner
+from devices.device_communication.event_listener import EventListener
 from devices.device_communication.event_manager import EventManager
 from devices.device import Device
 
 
 # CCP - AudioDevice und Tv sind geschlossen gegenüber der selben Art von Veränderungen und sind deshalb in einem Modul zusammengefasst
 
-class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner):
+class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListener):
     
     def __init__(self, name: str):
         super().__init__("AudioDevice: " + name)
@@ -42,7 +42,7 @@ class AudioDevice(Device, PercentageAdjustable, SwitchOnOffable, EventListerner)
 
     def setPercentage(self, percentage: int):
         self.volume = percentage
-        self.logger.info("Audiodevice " + str(self.name) + " set volume to : " + str(percentage))
+        self.logger.info("AudioDevice " + str(self.name) + " set volume to : " + str(percentage))
 
     def isRunning(self) -> bool:
         return self.running

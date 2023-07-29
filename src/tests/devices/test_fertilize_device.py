@@ -1,5 +1,5 @@
 import unittest
-from devices.fertilize_device import FertilizeDevice
+from devices.standard_devices.fertilize_device import FertilizeDevice
 
 
 class TestFertilizeDevice(unittest.TestCase):

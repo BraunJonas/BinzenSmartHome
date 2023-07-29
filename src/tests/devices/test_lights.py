@@ -1,6 +1,6 @@
 import unittest
-from devices.lights import IntensityLight
-from devices.lights import Light
+from devices.standard_devices.lights import IntensityLight
+from devices.standard_devices.lights import Light
 
 
 class TestLight(unittest.TestCase):

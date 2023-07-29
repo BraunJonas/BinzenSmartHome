@@ -5,6 +5,7 @@ from controller import Controller
 from rooms.gardenhouse_zone import GardenhouseZone
 from rooms.zone import Zone
 from rooms.zone_prototype_register import ZonePrototypeRegister
+import unittest
 
 
 # ADP - Es gibt keine Zyklen in der Abhängigkeitsstruktur des gesamten Codes
@@ -241,6 +242,7 @@ def addZone():
 
 
 if __name__ == "__main__":
+    unittest.main()
     setUpLogger()
     Controller.setUp()
     while(True):

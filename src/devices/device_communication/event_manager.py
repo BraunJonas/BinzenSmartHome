@@ -1,5 +1,5 @@
 import logging
-from devices.device_communication.event_listener import EventListerner
+from devices.device_communication.event_listener import EventListener
 
 logger = logging.getLogger(__name__)
 
@@ -8,12 +8,12 @@ class EventManager():
     __listeners = []
 
     @staticmethod
-    def subscribe(listener: EventListerner, event: str):
+    def subscribe(listener: EventListener, event: str):
         EventManager.__listeners.append([listener, event])
     
 
     @staticmethod
-    def unsubscribe(listener: EventListerner, event: str):
+    def unsubscribe(listener: EventListener, event: str):
         EventManager.__listeners.remove([listener, event])
         
 

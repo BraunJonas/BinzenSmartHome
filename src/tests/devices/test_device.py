@@ -15,4 +15,6 @@ class TestDevice(unittest.TestCase):
         self.device.setName("Kühlschrank")
         self.assertEqual(self.device.getName(), "Kühlschrank")
 
+
+
    

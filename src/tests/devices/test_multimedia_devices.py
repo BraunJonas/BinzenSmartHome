@@ -1,6 +1,6 @@
 import unittest
-from devices.multimedia_devices import AudioDevice
-from devices.multimedia_devices import Tv
+from devices.standard_devices.multimedia_devices import AudioDevice
+from devices.standard_devices.multimedia_devices import Tv
 
 
 class TestAudioDevice(unittest.TestCase):
@@ -13,11 +13,21 @@ class TestAudioDevice(unittest.TestCase):
         self.assertEqual(self.audioDevice.getPercentage(), 30)
     
     def test_setPercentage(self):
-        self.audioDevice.setPercentage(60)
+        self.logMessage = f"AudioDevice {self.audioDevice.name} set volume to : 60"
+        with self.assertLogs() as log:
+            self.audioDevice.setPercentage(60)
+        #checks if only one message gets logged
+        self.assertEqual(len(log.records), 1)
+        self.assertEqual(log.records[0].getMessage(), self.logMessage)
         self.assertEqual(self.audioDevice.getPercentage(), 60)
 
     def test_setRunning(self):
-        self.audioDevice.setRunning(True)
+        self.logMessage = f"AudioDevice {self.audioDevice.name} changed running to True"
+        with self.assertLogs() as log:
+            self.audioDevice.setRunning(True)
+        #checks if only one message gets logged
+        self.assertEqual(len(log.records), 1)
+        self.assertEqual(log.records[0].getMessage(), self.logMessage)
         self.assertEqual(self.audioDevice.isRunning(), True)
 
     def test_isRunning(self):
@@ -58,32 +68,11 @@ class TestAudioDevice(unittest.TestCase):
         #checks if only one message gets logged
         self.assertEqual(len(log.records), 1)
         self.assertEqual(log.records[0].getMessage(), self.logMessage)
-    
-    def test_setReactToAlarms(self):
-        ### TO-Do:   - test set-method
-        #            - test if-else condition
-        ""
-    
+        
     def test_getReactToAlarms(self):
         self.audioDevice.setReactToAlarms(True)
         self.assertEqual(self.audioDevice.getReactToAlarms(), True)
     
-    def test_notify(self):
-        ""
-
-class TestTv(unittest.TestCase):
-
-    def setUp(self):
-        self.tv = Tv("Fernseher")
-    
-
-    ### Methode vollständig?
-
-   #def test_playVideo_success(self):
-   #    self.tv.setRunning(True) 
-   #    media = "Beispielvideo"
-   #    self.tv.playAudio("Beispielvideo")
-   #    self.assertEqual(self.tv.media, media)
 
 
     

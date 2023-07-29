@@ -1,8 +1,11 @@
 import unittest
-from devices.door import Door
+from devices.standard_devices.door import Door
 
 
 class TestDevice(unittest.TestCase):
+
+    if __name__ == '__main__':
+        unittest.main()
 
     def setUp(self):
         self.door = Door("Waschmachine")

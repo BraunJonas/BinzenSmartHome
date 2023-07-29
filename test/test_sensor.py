@@ -1,1 +1,0 @@
-# implementiert, wenn Klasse fertig
