@@ -13,17 +13,20 @@ class Light(Device, SwitchOnOffable):
         self.logger.info("Light " + name + " has been created")
         self.running = False
 
-
+    #Festlegung des zustandes
     def setRunning(self, running: bool):
         self.running = running
         self.logger.info("Light " + str(self.name) + "changed running to " + str(running))
 
+    #Prüfen obe ist das licht an ist
     def isRunning(self) -> bool:
         return self.running
     
+    #Simulation eines Durchlaufs -> Main-Klasse
     def simuliereEinenThreadDurchlauf(self):
         self.logger.info(f"Light {self.name} is {'running' if self.running else 'not running'}" )
 
+    #Klonierung des Objektes gemäß Prototype
     def clone(self, name: str):
         clone = Light(name)
         clone.setRunning(self.running)
@@ -39,17 +42,21 @@ class IntensityLight(PercentageAdjustable, Light):
         self.logger.info("IntensityLight " + name + " has been created")
         self.intesity = 50
 
+    #Festlegung der Lichtitensität
     def setPercentage(self, percentage: int):
         self.intesity = percentage
         self.logger.info("IntensityLight " + self.name + " set to intensity: " + str(percentage))
 
+    #Rückgabe des itensität wertes
     def getPercentage(self) -> int:
         return self.intesity
 
+    #Simulation eines Durchlaufs -> Main-Klasse
     def simuliereEinenThreadDurchlauf(self):
         self.logger.info(
             f"IntensityLight {self.name} is {'running' if self.running else 'not running'} with intensity {self.intesity}")
 
+    #klonieren der device gemäß Prototype
     def clone(self, name: str):
         clone = IntensityLight(name)
         clone.setRunning(self.running)

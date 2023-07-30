@@ -15,14 +15,17 @@ class WateringDevice(Device, AmountAdjustable, EventListerner):
         self.strategy = WateringStrategyNormal()
         EventManager.subscribe(self, "water")
 
+    #Festlegung eiens wertes für bewässerung
     def setAmount(self, amount: float):
         if amount>0:
             self.amount = amount
             self.logger.info("WateringDevice " + str(self.name) + "changed amount to " + str(amount))
 
+    #Rückgabe des bewässerungwertes
     def getAmount(self) -> float:
         return self.amount
     
+    #Festlegung der wateringstrategy strategy pattern
     def setWateringStrategy(self,strategy: WateringStrategy):
         self.strategy=strategy
 
@@ -41,10 +44,12 @@ class WateringDeviceGround(WateringDevice, AmountAdjustable):
         super().__init__("WateringDeviceGround: " + name)
         self.logger.info("WateringDeviceGround " + name + " has been created")
 
+    #Simulation eines Durchlaufs -> Main Klasse
     def simuliereEinenThreadDurchlauf(self):
         amountUsed = self.strategy.execute(self.amount)
         self.logger.info(f"WateringDeviceGround {self.name} is watering {amountUsed}l per day" )
 
+    #klonieren gemäß Prototype
     def clone(self, name: str):
         clone = WateringDeviceGround(name)
         clone.setAmount(self.amount)
@@ -56,10 +61,12 @@ class WateringDeviceDrops(WateringDevice, AmountAdjustable):
         super().__init__("WateringDeviceDrops: " + name)
         self.logger.info("WateringDeviceDrops " + name + " has been created")
 
+    #Simulation eines durchlaufs -> Main Klasse
     def simuliereEinenThreadDurchlauf(self):
         amountUsed = self.strategy.execute(self.amount)
         self.logger.info(f"WateringDeviceDrops {self.name} is watering {amountUsed}l per day" )
 
+    #klonieren gemäß Prototyüe
     def clone(self, name: str):
         clone = WateringDeviceDrops(name)
         clone.setAmount(self.amount)

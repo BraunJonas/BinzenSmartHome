@@ -15,6 +15,7 @@ def setUpLogger():
     logger = logging.getLogger()
     logger.info(10*"-" + str(datetime.datetime.now()) + 75*"-")
 
+#Konsolenabfrage
 def ask_yesno(question):
     yes = {'yes', 'y', 'j', 'ja'}
     no = {'no', 'n', 'nein'}
@@ -50,7 +51,7 @@ def showMenu(title: str, options: List[str]):
         print("Gib eine gültige Zahl ein")
 
 
-#eventuell in zweiter datei laden?
+#Konsolenabfrage für Änderungen
 def askChanges():
     while(True):
         if ask_yesno("Möchten Sie weitere Einstellungen ändern, Devices oder Zonen hinzufügen? [y/n]"):
@@ -72,7 +73,7 @@ def chooseZone():
     else:
         chooseDevice(chosenOption)
 
-
+#Hinzufügen von Devices
 def addDevice(zone: int):
     print("Gib einen Namen für das neue Device ein: ")
     name = input()
@@ -84,8 +85,6 @@ def addDevice(zone: int):
         return
     Controller.addDevice(zone, options[chosenOption], name)
     print("Device mit Standardeinstellungen hinzugefügt")
-
-
 
 def changePercentage(zone, device):
     while (True):
@@ -166,7 +165,7 @@ def changeName(zone, device):
     Controller.changeName(zone, device, eingabe)
     print("Name geändert")
 
-
+#Ändern von Devices
 def changeDevice(zone, device):
     optionsTupel = Controller.getChangeOptions(zone, device)
     options = []
@@ -204,7 +203,7 @@ def changeDevice(zone, device):
             Controller.deleteDevice(zone, device)
             print("Device wurde gelöscht")
 
-
+#Deviceabgrage für Veränderungen
 def chooseDevice(zone: int):
     options = []
     for d in Controller.getDevices(zone):
@@ -218,6 +217,7 @@ def chooseDevice(zone: int):
     else:
         changeDevice(zone,chosenOption)
 
+#Hinzufügen von Zonen
 def addZone():
     print("Gib einen Namen für die neue Zone ein: ")
     name = input()

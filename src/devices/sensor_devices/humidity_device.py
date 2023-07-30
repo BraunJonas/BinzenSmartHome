@@ -12,17 +12,21 @@ class HumidityDevice(SensorDevice):
         self.sensor = HumiditySensor()
         self.target = 40
 
+    #Einstellen des Prozentwertes mit Gültigkeitseingabe
     def setPercentage(self, percentage: int):
         if(0 < percentage < 100):
             self.target = percentage
             self.logger.info("HumidityDevice " + str(self.name) + " set Target to " + str(percentage))
 
+    #Rückgabe des Prozentwertes für die Dvice
     def getPercentage(self ):
         return self.target 
 
+    #Unterschiedberechnung zwischen target und sensor Messung
     def checkDifferenceToTarget(self) -> int:
         return self.target - self.sensor.getData()
     
+    #dimulieren eines Durchlaufs siehe Main Klasse
     def simuliereEinenThreadDurchlauf(self):
         self.sensor.setRandomData()
         if not self.sensor.checkEverythingNormal():
@@ -31,6 +35,7 @@ class HumidityDevice(SensorDevice):
         diff = self.checkDifferenceToTarget()
         self.logger.info(f"HumidityDevice {self.name} is trying to {'increase ' if diff<0 else 'decrease'} huidity. Difference to Target: {diff}" )
 
+    #klonieren einer device gemäß Prototype
     def clone(self, name: str):
         clone = HumidityDevice(name)
         clone.setPercentage(self.getPercentage())
