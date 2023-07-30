@@ -25,6 +25,8 @@ class Controller():
     __frostheating = FrostHeating.getInstance()
     #Alle Devices außer RainBarrel und Frostheating hinzufügen (RainBarrel und Frostheating sind zonenübergreifend)
     __deviceOptions = ["TemperatureDevice", "HumidityDevice", "ShadowingDevice", "Tv", "Door","FertilizeDevice", "AudioDevice", "Light", "IntensityLight", "WateringDeviceDrops", "WateringDeviceGround", "Window"]
+    
+    #Aufsetzen der Prototypes
     @staticmethod
     def setUpPrototypeZones():
 
@@ -82,6 +84,7 @@ class Controller():
         ZonePrototypeRegister.addPrototype(z, z.getName())
 
 
+    #setup des Controllers
     @staticmethod
     def setUp():
         Controller.setUpPrototypeZones()
@@ -93,18 +96,22 @@ class Controller():
         for z in Controller.__zones:
             z.simuliereEinenThreadDurchlauf()
 
+    #Rückgabe der Zonen
     @staticmethod
     def getZones():
         return Controller.__zones
 
+    #Rückgabe der Devices
     @staticmethod
     def getDevices(zone: int):
         return Controller.__zones[zone].getDevices()
 
+    #Hinzufügen von Zonen
     @staticmethod
     def addZone(zone: Zone):
         Controller.__zones.append(zone)
 
+    #Rückgabe der Device Options Array
     @staticmethod
     def getDeviceOptions():
         return Controller.__deviceOptions
@@ -138,6 +145,7 @@ class Controller():
             case "Window":
                 Controller.__zones[zone].addDevice(Window(name))
 
+    #Abänderung der Werte der jeweiligen Device und Typevaluierung
     @staticmethod
     def getChangeOptions(zone: int, device: int):
         device = Controller.__zones[zone].getDevices()[device]
@@ -163,15 +171,19 @@ class Controller():
         options.append((10, "Lösche Device"))
         return options
 
+    #Attributsumkehrfunktion true->flase false->true
     @staticmethod
     def invertOpen(zone, device):
         d = Controller.__zones[zone].getDevices()[device]
         d.setOpen(not d.isOpen())
+    
+    #Attributsumkehrfunktion true->flase false->true
     @staticmethod
     def invertRunning(zone, device):
         d = Controller.__zones[zone].getDevices()[device]
         d.setRunning(not d.isRunning())
 
+    #Attributsumkehrfunktion true->flase false->true
     @staticmethod
     def invertLocked(zone, device):
         d = Controller.__zones[zone].getDevices()[device]
@@ -207,10 +219,12 @@ class Controller():
         d = Controller.__zones[zone].getDevices()[device]
         d.setReactToAlarms(not d.getReactToAlarms())
 
+    #Löschen der Device aus der Zone
     @staticmethod
     def deleteDevice(zone, device):
         d = Controller.__zones[zone].getDevices()[device]
         Controller.__zones[zone].removeDevice(d)
+    
     @staticmethod
     def changeName(zone, device, eingabe):
         d = Controller.__zones[zone].getDevices()[device]

@@ -10,6 +10,7 @@ class FertilizeDevice(Device, AmountAdjustable):
         self.logger.info("FertilizeDevice " + name + " has been created")
         self.amount = 50
 
+    #Festlegung des Wertes zum Düngen
     def setAmount(self, amount: float):
         if(amount>0):
             self.amount = amount
@@ -17,13 +18,15 @@ class FertilizeDevice(Device, AmountAdjustable):
         else:
             self.logger.info("FertilizeDevice " + str(self.name) + " can't set amount below 0")
 
-
+    #Rückgabe des eingestellten Wertes zum Düngen
     def getAmount(self) -> float:
         return self.amount
     
+    #Simulation eines Durchlaufs -> Main Klasse
     def simuliereEinenThreadDurchlauf(self):
         self.logger.info(f"FertilizeDevice {self.name} is fertilizing {self.amount}g per day" )
 
+    #klonieren gemäß Prototype
     def clone(self, name: str):
         clone = FertilizeDevice(name)
         clone.setAmount(self.amount)

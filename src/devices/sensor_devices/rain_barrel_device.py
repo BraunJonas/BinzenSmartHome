@@ -7,9 +7,10 @@ from sensors.water_level_sensor import WaterLevelSensor
 
 class RainBarrel(Device):
     __instance = None
-     #Singleton
+     #Singleton -> speicherung in __instance
 
     def __init__(self ):
+        #Abfrage ob bereits eins existert
         if RainBarrel.__instance != None:
             raise Exception("This is a Singleton class")
         super().__init__("RainBarrel")
@@ -19,6 +20,7 @@ class RainBarrel(Device):
         self.sensor = WaterLevelSensor()
         RainBarrel.__instance = self
 
+    #Erzeugung einer neuen instanz falls keine existiert
     @staticmethod
     def getInstance():
         logger = logging.getLogger(__name__)
@@ -47,6 +49,7 @@ class RainBarrel(Device):
             return True
         return False
     
+    #Simulation eines Thread Durchlaufs die Main Klasse
     def simuliereEinenThreadDurchlauf(self):
         self.sensor.setRandomData()
         enoughWaterNew = self.decideEnoughWater()

@@ -6,9 +6,10 @@ from devices.device import Device
 
 class FrostHeating(Device, SwitchOnOffable):
     __instance = None
-     #Singleton
+     #Singleton Speicherung in __instance
 
     def __init__(self):
+        #Abfrage ob bereits eine Frostheizung existiert
         if FrostHeating.__instance != None:
             raise Exception("This is a Singleton class")
         super().__init__("Frostheating")
@@ -16,6 +17,7 @@ class FrostHeating(Device, SwitchOnOffable):
         self.running = False
         FrostHeating.__instance = self
 
+    #Rückgabe der Frostheizung gemäß Singelton  
     @staticmethod
     def getInstance():
         logger = logging.getLogger(__name__)
@@ -26,11 +28,12 @@ class FrostHeating(Device, SwitchOnOffable):
             logger.info("Instance already existed: returning instance")
         return FrostHeating.__instance
 
-
+    #Festlegung des Zustandes ob diese gerade läuft
     def setRunning(self, running: bool):
         self.running = running
         self.logger.info("FrostHeating set running to " + str(running))
 
+    #Abfrage ob diese läuft
     def isRunning(self) -> bool:
         return type(self).__instance.running
     
@@ -42,7 +45,7 @@ class FrostHeating(Device, SwitchOnOffable):
             return True
         return False
 
-    
+    #Simulation eines Durchlaufs -> Main Klasse
     def simuliereEinenThreadDurchlauf(self):
         self.setRunning(self.decideRunning())
         self.logger.info(f"FrostHeating {self.name} is {'running ' if self.running else 'not running'}" )
