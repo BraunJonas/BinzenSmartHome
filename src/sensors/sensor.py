@@ -17,6 +17,7 @@
 
 class Sensor():
     
+    #Prüfen ob Sensorwert im Normalbereich
     def checkEverythingNormal(self) -> bool:
         raise NotImplementedError
     

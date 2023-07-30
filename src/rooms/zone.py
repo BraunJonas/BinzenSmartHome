@@ -9,7 +9,7 @@ from devices.device import Device
 
 
 class Zone:
-    
+    #jeder Zone können Devices zugeordnet werden
     def __init__(self, name: str):
         self.name = name
         self.logger = logging.getLogger(__name__)
@@ -33,13 +33,14 @@ class Zone:
         for d in self.devices:
             d.simuliereEinenThreadDurchlauf()
 
+    #Klonieren einer Zone mittels Aufruf gemäß Prototype , sowie klonierung der zugehörigen Geräte
     def clone(self, name: str):
         clone = Zone(name)
         for d in self.devices:
-
             clone.addDevice(d.clone("Device von Zone: " + name))
         return clone
 
+    #Abändern des Wertes für eine Device
     def changeAmount(self, amount: int, type):
         if not issubclass(type, AmountAdjustable):
             self.logger.warning("Change Amount was called for the wrong Type")
@@ -52,6 +53,7 @@ class Zone:
         if not foundDevice:
             self.logger.warning("Zone "+ self.name + " has no Device with Type "+ str(type))
 
+    #Abändern des Wertes für eine Device
     def changePercentage(self, percentage: int, type):
         if not issubclass(type, PercentageAdjustable):
             self.logger.warning("Change Percentage was called for the wrong Type")
