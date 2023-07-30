@@ -16,6 +16,7 @@ class GardenhouseZone (Zone):
         self.logger.info("Gardenhousezone " + name + " has been created")
         #Devices Adden
 
+    #Abfrage über den Adapter und entsprechende Reaktion der Zone über den Rückgabewert vom Adapter
     def askKI(self):
         try:
             code = getPflegeHinweis("Bild")
