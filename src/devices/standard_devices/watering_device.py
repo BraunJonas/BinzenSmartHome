@@ -1,12 +1,12 @@
 import logging
 from actors.amount_adjustable import AmountAdjustable
-from devices.device_communication.event_listener import EventListerner
+from devices.device_communication.event_listener import EventListener
 from devices.device_communication.event_manager import EventManager
 from devices.standard_devices.watering_strategy import WateringStrategy, WateringStrategyNormal, WateringStrategySaveUp
 from devices.device import Device
 
 
-class WateringDevice(Device, AmountAdjustable, EventListerner):
+class WateringDevice(Device, AmountAdjustable, EventListener):
     def __init__(self, name: str):
         super().__init__(name)
         self.logger = logging.getLogger(__name__)
